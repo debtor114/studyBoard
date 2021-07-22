@@ -10,7 +10,7 @@
 
 1. 최단경로 문제는 Optimal Substructure를 가지고 있다. (Dynamic Programming)
 
-![intro.png](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/image/intro.png?raw=true)
+![intro.png](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/intro.png?raw=true)
 
 `distance(n, m)`: n에서 m까지의 최단거리이라고 정의한다면
 
@@ -32,7 +32,7 @@
 
 ex) 대전에서 서울을 갈때, 같은 속도로 움직인다면, 대전에서 태안을 갔다가 태안에서 서울을 가는 것이 대전에서 서울로 바로가는 것보다 느리다.
 
- ![intro.png](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/image/shortest_path_dp.png?raw=true)
+ ![intro.png](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/shortest_path_dp.png?raw=true)
 
 
 
@@ -78,7 +78,7 @@ cf> **Negative-weight edge**
 
 들어가기 앞서, Relaxation이란 최단경로 특성의 *optimal structure*을 이용한 것이다.
 
-![intro.png](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/image/relaxation.png?raw=true)
+![intro.png](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/relaxation.png?raw=true)
 
 `d[v] > d[u] + w(u,v) `인 경우 `d[u] + w(u,v) `값이 더 작다면 값을 `d[v]`값을 낮춰주는 과정이다.
 
@@ -151,7 +151,7 @@ BELLMAN-FORD(V, E, w, s) {
 
 **동작과정**
 
-![intro.png](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/image/bellman.gif?raw=true)
+![intro.png](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/bellman.gif?raw=true)
 
 **시간복잡도**: O (VE) 		
 

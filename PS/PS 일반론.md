@@ -8,7 +8,7 @@
 
 Ex) 백준 10872번: 팩토리얼
 
-![image-20210721141623670](images/image-20210721141623670.png)
+![image-20210721141623670](https://github.com/doooooooong/studyBoard/blob/master/PS/images/image-20210721141623670.png?raw=true)
 
 N이라는 인풋을 받았을 때, N!의 값을 출력하면 되는구나 라고 명확하게 이해해야합니다.
 
@@ -127,7 +127,7 @@ heap, global, static 총계 256MB, stack 1MB 이런 식으로 적혀있을 수�
 
 3. heap 영역은 **프로그래머에 의해 할당**되며 크기는 런타임에 결정된다. 할당해야 할 메모리의 크기를 런타임에 결정해야하는 때 사용되는 공간이다. 이렇게 할당하는 것을 동적할당이라고 한다.
 
-![memory_structure](images/memory_structure.JPG)
+![memory_structure](https://github.com/doooooooong/studyBoard/blob/master/PS/images/memory_structure.JPG?raw=true)
 
 main 함수에서 int 배열을 호출할 경우 stack 메모리에 배열이 할당된다. 1MB 제한에서는 
 

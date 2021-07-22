@@ -9,7 +9,7 @@
 **최소 신장 트리 문제**
 
 : Connected, Undirected, Weighted 그래프에서 가중치가 가장 적게 신장 트리를 만드는 문제
-<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/image/MST_intro1.png" style="zoom: 33%;" />  <img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/image/MST_intro2.png" style="zoom: 33%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/MST_intro1.png" style="zoom: 33%;" />  <img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/MST_intro2.png" style="zoom: 33%;" />
 
 
 
@@ -51,7 +51,7 @@ safe edge 찾기
 
 Ex) 
 
-<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/image/MST_intro2.png" style="zoom: 60%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/MST_intro2.png" style="zoom: 60%;" />
 
 위 그래프에서 V = {A, B, C, D, E, F, G, H} , E = {AB, AH, BC, BE, CB, DE, EF,  FG, FH , HG} 이다.
 
@@ -61,7 +61,7 @@ Ex)
 
   => 간선의 한 쪽 정점이 S, 나머지 한 쪽 정점이 V-S에 포함되어 있으면 그 edge는 cut을 crosses한다고 한다.
 
-![intro.png](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/image/crossEdge.png?raw=true)
+![intro.png](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/crossEdge.png?raw=true)
 
 - respect: E의 부분집합 T의 모든 간선이 crosses edge가 아니라면  cut은 A를 respect한다 라고 한다.
 - light edge: cut을 crosses하는 간선 중 가장 가중치가 낮은 간선
