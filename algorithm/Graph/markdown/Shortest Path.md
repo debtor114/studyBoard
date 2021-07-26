@@ -8,13 +8,15 @@
 
 ##### 최단경로의 특성
 
-1. 최단경로 문제는 Optimal Substructure를 가지고 있다. (Dynamic Programming)
+i. **Optimal Substructure**를 가지고 있다. (Dynamic Programming)
 
 ![intro.png](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/intro.png?raw=true)
 
 `distance(n, m)`: n에서 m까지의 최단거리이라고 정의한다면
 
 `distance(1, 4) = distance(1, 2) + distance(2, 3) + distance(3, 4) `로 정의할 수 있다.
+
+
 
 증명) 
 
@@ -26,7 +28,9 @@
 
 
 
-2. Triangle inequality: `w[u,v] <= w[u,x] + w[x,v]` 
+
+
+**ii. Triangle inequality: `w[u,v] <= w[u,x] + w[x,v]`** 
 
 `w[u,v]`: 경로 u-v의 가중치
 
@@ -53,24 +57,26 @@ cf> **Negative-weight edge**
 
 
 
+
+
 ### 1. Single-Source Path
 
 임의의 정점 하나에서 시작해서 모든 정점까지의 거리를 구하는 문제
 
 **설계모델**
 
-- 정의
-  - s: 출발점
-  - V: 출발점을 포함한 모든 정점
-  - d[v]: s에서 v 정점까지의 최단거리
-  - p[v]: v 정점의 parent, v 정점을 오기 전 어느 정점을 거쳐 왔는가를 나타냄
+- s: 출발점
+- V: 출발점을 포함한 모든 정점
+- d[v]: s에서 v 정점까지의 최단거리
+- p[v]: v 정점의 parent, v 정점을 오기 전 어느 정점을 거쳐 왔는가를 나타냄
 
 
 
-- 위의 정의를 이용해 최단경로를 구하는 과정을 서술하면 아래와 같다.
+위의 정의를 이용해 최단경로를 구하는 과정을 서술하면 아래와 같다.
 
-1. 모든 정점 V에 대해서 d[v]를 무한대로 설정한다.
-2. Relaxation을 거치면서 d[v]를 감소시킨다.
+ i. 모든 정점 V에 대해서 d[v]를 무한대로 설정한다.
+
+ ii. Relaxation을 거치면서 d[v]를 감소시킨다.
 
 
 
@@ -120,7 +126,7 @@ Relaxation(u,v,w) {
 
     
 
-그래프의 vertex의 갯수만큼 모든 edge에 대해서 relaxation을 진행한다.
+그래프의 **vertex의 갯수만큼 모든 edge에 대해서 relaxation**을 진행한다.
 
 
 
@@ -128,16 +134,23 @@ Relaxation(u,v,w) {
 
 ```c++
 BELLMAN-FORD(V, E, w, s) {
-    INIT-SINGLE-SOURCE(V, s);
+  
+   // INIT-SINGLE-SOURCE(V, s);
+   for each v : V {
+      do d[v] = INF;
+      p[v] = NIL;
+   }
+   
+  d[s] = 0;
     
     // why 1 to V-1?
     // 마지막 정점은 어차피 이전 정점을 relaxation 하면서 완료되었으니 건너 뛴다.
 	for (i = 1; i < V-1; i++) {
  		for each edge (u,v) : E
-            RELAX(u, v, w)
+        Relaxation(u, v, w)
     }
     
-    // why? one more check
+    // 왜 한번 더 체크할까?
     // 음의 사이클이 있는지 확인하기 위해서
     // 만약 음가중치 사이클이 있다면 최단경로 w(u, v) < 0 이므로
 	for each edge (u,v) : E {
@@ -151,9 +164,31 @@ BELLMAN-FORD(V, E, w, s) {
 
 **동작과정**
 
-![intro.png](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/bellman.gif?raw=true)
+Relaxation을 통해 d[v]가 바뀌는 시점만 있습니다. 
 
-**시간복잡도**: O (VE) 		
+
+
+<img src="../images/image-20210726141314548.png" alt="image-20210726141314548" style="zoom:50%;" />
+
+<img src="../images/image-20210726141330925.png" alt="image-20210726141330925" style="zoom:50%;" />
+
+
+
+<img src="../images/image-20210726141344283.png" alt="image-20210726141344283" style="zoom:50%;" />
+
+
+
+<img src="../images/image-20210726141358109.png" alt="image-20210726141358109" style="zoom:50%;" />
+
+<img src="../images/image-20210726141411704.png" alt="image-20210726141411704" style="zoom:50%;" />
+
+
+
+<img src="../images/image-20210726141425783.png" alt="image-20210726141425783" style="zoom:50%;" />
+
+
+
+**시간복잡도**: $ O (V*E) $ 		
 
 why?  |V| - 1만큼 relaxation을 해주기 때문
 
@@ -238,12 +273,42 @@ int main() {
 
 
 
+
+
+#### Single Source in DAG
+
+- DAG이기 때문에 싸이클이 없습니다.
+- DAG의 모든 경로는 토폴로지로 정렬된 하위 시퀀스이므로 왼쪽에서 오른쪽으로 각 최단 경로의 정점을 처리한 다음 한 번에 수행됩니다.
+
+
+
+의사코드
+
+```pseudocode
+DAG-SHORTEST-PATHS(V, E, w, s)
+	topologically sort the vertices 
+	INIT-SINGLE-SOURCE(V, s)
+	for each vertex u, take in topologically sorted order
+		do for each vertex v in Adj[u] 
+			do RELAX(u, v, w)
+```
+
+
+
+**시간복잡도**: $ \theta (V+E) $ 		
+
+
+
+
+
+
+
  #### Dijkstra Algorithm
 
 **개요**
 
 - 음이 아닌 정수인 가중치 그래프에 대해서만 사용 가능
-- BFS와 비슷하다 (가중치 있는 버전의 BFS?)
+- BFS와 비슷하다 (가중치 있는 버전의 BFS)
   - 큐에서 꺼내온 정점에서 시작하여 점차적으로 Tree를 확장시키는 느낌
   - FIFO queue 대신 Priority queue를 사용
 
@@ -251,13 +316,148 @@ int main() {
 
 
 
+설계
+
+```
+두 개의 정점 세트가 있습니다.
+– S = 최단 경로에 포함된 정점.
+– Q = 우선순위 큐 = V – S.
+
+그래프 G=(V,E)의 경우 최단 경로가 알려진 정점 집합 S를 유지합니다.
+
+추정된 최소 최단 경로로 정점 u(u∈V-S)를 반복적으로 선택하고 u를 S에 추가하고 u를 떠나는 모든 가장자리를 완화합니다.
+```
 
 
 
 
-#### Single Source in DAG
 
-topological sort를 학습 후에 이해 가능
+의사 코드
+
+```pseudocode
+Dijkstra (G, w, s)
+
+INITIALIZE-SINGLE-SOURCE (G, s)
+
+set S = {};
+priority_queue Q;
+for (int i = 0; i < V; i++)
+	Q.push(V[i]);
+	
+while (!Q.empty())
+	u = EXTRACT-MIN (Q);
+	S.insert(u);
+	for each vertext v in adj[u]
+		Relaxation(u, v, w)
+```
+
+
+
+동작
+
+s->t로 가는 최단경로 찾기
+
+![image-20210726144051054](../images/image-20210726144051054.png)
+
+
+
+
+
+![image-20210726144131857](../images/image-20210726144131857.png)
+
+
+
+![image-20210726144150288](../images/image-20210726144150288.png)
+
+
+
+
+
+![image-20210726144209529](../images/image-20210726144209529.png)
+
+
+
+![image-20210726144350424](../images/image-20210726144350424.png)
+
+
+
+
+
+![image-20210726144401909](../images/image-20210726144401909.png)
+
+
+
+![image-20210726144420765](../images/image-20210726144420765.png)
+
+![image-20210726144439133](../images/image-20210726144439133.png)
+
+
+
+![image-20210726144526881](../images/image-20210726144526881.png)
+
+
+
+![image-20210726144544516](../images/image-20210726144544516.png)
+
+
+
+![image-20210726144619949](../images/image-20210726144619949.png)
+
+
+
+![image-20210726144659741](../images/image-20210726144659741.png)
+
+
+
+![image-20210726144725395](../images/image-20210726144725395.png)
+
+
+
+![image-20210726144743500](../images/image-20210726144743500.png)
+
+
+
+![image-20210726144800422](../images/image-20210726144800422.png)
+
+
+
+
+
+![image-20210726144819086](../images/image-20210726144819086.png)
+
+
+
+
+
+![image-20210726144829493](../images/image-20210726144829493.png)
+
+
+
+![image-20210726144841733](../images/image-20210726144841733.png)
+
+![image-20210726144912689](../images/image-20210726144912689.png)
+
+
+
+코드
+
+```c++
+```
+
+
+
+
+
+
+
+
+
+시간복잡도
+
+- 바이너리 힙: $ O (E \log V) $
+- 피보나치 힙: $ O (V \log V + E) $
+
+
 
 
 
@@ -265,5 +465,86 @@ topological sort를 학습 후에 이해 가능
 
 ### 2. All Pairs Shortest Path
 
+모든 정점에 대해 최단경로를 찾으려면 앞서 살펴본 다익스트라, 벨만포드 알고리즘을 정점의 갯수만큼 반복하면 될 것이다. 그렇다면 시간복잡도는 아래와 같다.
+
+- Dijkstra: $ O (V \log V + E) \to O (V^2 \log V + VE) \because V \to V^2 \\
+  on \ dense \ graph, \ O(V^3) \because E = V^2 $
+
+  
+
+- Bellman-Ford: $ O (V*E) \to O (V^2 *E) \because V \to V^2 \\
+  on \ dense \ graph, \ O(V^4) \because E = V^2 $
+
+
+
+너무 느린것 같다. 그래서 플로이드와 와샬이란 사람이 새로운 알고리즘을 제시했다.
+
+
+
 #### Floyd-Warshall Algorithm
+
+
+
+개요
+
+- 음의 가중치 간선 허용
+- 음의 가중치 사이클은 없다고 가정한다.
+- 다이나믹 프로그래밍 패러다임
+
+
+
+
+
+설계
+
+- Intermediate vertex
+
+경로 p ($ <v_1, ..., v_L> $)에서 $ v_1, v_L $을 제외한 모든 정점 ( $ \\{ v_2, ... v_{L-1} \\} $ )
+
+
+
+V의 모든 정점 i,j 쌍에 대하여, 경로 p를 중간 정점이 {1,2,...,k}인 i에서 j까지의 모든 경로의 최소 가중치 경로라고 합니다.
+
+중간 정점이 {1,2,...,k-1}인 i에서 j까지의 모든 최단 경로가 있다고 가정합니다.
+
+경로 p와 중간 정점이 {1,2,...,k-1}인 i에서 j까지의 모든 최단 경로의 관계를 관찰합니다.
+
+
+
+최단경로는 같은 정점을 두번 포함하지 않습니다.
+
+증명) 동일한 정점을 두 번 포함하는 경로에는 사이클이 포함됩니다. 사이클을 제거하면 더 짧은 경로가 제공됩니다.
+
+
+
+
+
+p는 중간 정점이 {1,...,k-1}인 최단 경로에 의해 결정됩니다.
+
+- Case1: k가 경로 p의 중간 정점이 아닌 경우.
+   경로 p는 i에서 j까지의 최단 경로이며 {1,...k-1}의 중간 경로입니다.
+
+
+
+- Case2: k가 경로 p의 중간 정점인 경우.
+
+  – 경로 p는 i -- p1→k - p2→j로 나눌 수 있습니다.
+
+  – p1은 집합 {1,2,...,k} 또는 {1,2,...,k-1}의 모든 중간 정점이 있는 i에서 k까지의 최단 경로입니다.
+
+  – p2는 {1,2,...,k} 또는 {1,2,...,k-1}을 사용하여 k에서 j까지의 최단 경로입니다.
+
+
+
+![image-20210726154217746](../images/image-20210726154217746.png)
+
+
+
+Recursive Solution
+
+$ d_{ij}^{(k)} $는 경로의 모든 중간 정점이 집합 {1,2,...,k}에 있도록 i에서 j까지의 최단 경로 길이입니다.
+
+$ D^{(k)} $ 는 n x n 행렬 $ [d_{ij}^{(k)}] $
+
+$ d_{ij}^{(0)} $ 은 
 

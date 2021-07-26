@@ -84,7 +84,7 @@ ii. A를 포함하고 있는 또다른 트리 $ T^{\prime} $ 라는 MST가 있�
 
 ​	이 $ T^{`\prime} $ 트리는 (u, v) light edge를 포함한다.  $ T^{\prime} = A \cup \{ (u, v) \} $
 
-<img src="../images/image-20210724144718713.png" alt="image-20210724144718713" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724144718713.png?raw=true" alt="image-20210724144718713" style="zoom:50%;" />
 
 
 
@@ -143,53 +143,82 @@ MST-Kruskal (G, w)
 
 작동 과정
 
-<img src="../images/image-20210724150413769.png" alt="image-20210724150413769" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724150413769.png?raw=true" alt="image-20210724150413769" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724150441288.png" alt="image-20210724150441288" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724150441288.png?raw=true" alt="image-20210724150441288" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724150520887.png" alt="image-20210724150520887" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724150520887.png?raw=true" alt="image-20210724150520887" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724150538057.png" alt="image-20210724150538057" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724150538057.png?raw=true" alt="image-20210724150538057" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724150553087.png" alt="image-20210724150553087" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724150553087.png?raw=true" alt="image-20210724150553087" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724150636909.png" alt="image-20210724150636909" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724150636909.png?raw=true" alt="image-20210724150636909" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724150659100.png" alt="image-20210724150659100" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724150659100.png?raw=true" alt="image-20210724150659100" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724150710652.png" alt="image-20210724150710652" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724150710652.png?raw=true" alt="image-20210724150710652" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724150743243.png" alt="image-20210724150743243" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724150743243.png?raw=true" alt="image-20210724150743243" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724150810152.png" alt="image-20210724150810152" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724150810152.png?raw=true" alt="image-20210724150810152" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724150825898.png" alt="image-20210724150825898" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724150825898.png?raw=true" alt="image-20210724150825898" style="zoom:50%;" />
 
 
 
 코드
 
 ```c++
+#include <iostream>
+#include <algorithm>
+#include <utility>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int V, E;
+  cin >> V >> E;
+  
+  vector < tuple <int, int, int> > list, tree;
+  vector < pair <int, int> > adj_list[100];
+  
+  int weight, u, v;
+  for (int i = 0; i < E; i++) {
+    cin >> weight >> u >> v;
+    list.push_back(make_tuple(weight, u, v));
+  }
+  
+  sort(t.begin(), t.end());
+  
+  while (tree.size() != V-1) {
+    if (!cycle) tree.push(list[i]);
+  }
+  
+  return 0;
+  
+}
 ```
 
 
@@ -234,29 +263,29 @@ fringe가 빌 때 까지 Tree의 정점 t와 fringe 안에 있는 정점 중 가
 
 작동과정
 
-<img src="../images/image-20210724154825744.png" alt="image-20210724154825744" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724154825744.png?raw=true" alt="image-20210724154825744" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724155038933.png" alt="image-20210724155038933" style="zoom:33%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724155038933.png?raw=true" alt="image-20210724155038933" style="zoom:33%;" />
 
 
 
-<img src="../images/image-20210724155436703.png" alt="image-20210724155436703" style="zoom:33%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724155436703.png?raw=true" alt="image-20210724155436703" style="zoom:33%;" />
 
-<img src="../images/image-20210724155735698.png" alt="image-20210724155735698" style="zoom:33%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724155735698.png?raw=true" alt="image-20210724155735698" style="zoom:33%;" />
 
 
 
-<img src="../images/image-20210724160047065.png" alt="image-20210724160047065" style="zoom:33%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724160047065.png?raw=true" alt="image-20210724160047065" style="zoom:33%;" />
 
 
 
 ....
 
-<img src="../images/image-20210724160359893.png" alt="image-20210724160359893" style="zoom:33%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724160359893.png?raw=true" alt="image-20210724160359893" style="zoom:33%;" />
 
-<img src="../images/image-20210724160500865.png" alt="image-20210724160500865" style="zoom:33%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724160500865.png?raw=true" alt="image-20210724160500865" style="zoom:33%;" />
 
 
 
@@ -291,17 +320,17 @@ MST-prim (G, w, r)
 
 INF로 초기화, 임의의 정점을 root로 설정
 
-<img src="../images/image-20210724160828753.png" alt="image-20210724160828753" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724160828753.png?raw=true" alt="image-20210724160828753" style="zoom:50%;" />
 
   
 
-<img src="../images/image-20210724161656677.png" alt="image-20210724161656677" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724161656677.png?raw=true" alt="image-20210724161656677" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724162219426.png" alt="image-20210724162219426" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724162219426.png?raw=true" alt="image-20210724162219426" style="zoom:50%;" />
 
-<img src="../images/image-20210724162055629.png" alt="image-20210724162055629" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724162055629.png?raw=true" alt="image-20210724162055629" style="zoom:50%;" />
 
 
 
@@ -309,19 +338,23 @@ INF로 초기화, 임의의 정점을 root로 설정
 
 
 
-<img src="../images/image-20210724163314629.png" alt="image-20210724163314629" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724163314629.png?raw=true" alt="image-20210724163314629" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724163119331.png" alt="image-20210724163119331" style="zoom:50%;" />
-
-<img src="../images/image-20210724163149372.png" alt="image-20210724163149372" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724163119331.png?raw=true" alt="image-20210724163119331" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210724163226813.png" alt="image-20210724163226813" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724163149372.png?raw=true" alt="image-20210724163149372" style="zoom:50%;" />
 
-<img src="../images/image-20210724162828351.png" alt="image-20210724162828351" style="zoom:50%;" />
+
+
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724163226813.png?raw=true" alt="image-20210724163226813" style="zoom:50%;" />
+
+
+
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724162828351.png?raw=true" alt="image-20210724162828351" style="zoom:50%;" />
 
 
 
