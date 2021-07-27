@@ -1,6 +1,8 @@
 ## String Matching
 
-Notation & Terminology
+
+
+#### Notation & Terminology
 
 -  T [1 .. n]: 텍스트
 - P [1 .. m]: 패턴
@@ -41,7 +43,7 @@ Notation & Terminology
 
 
 
-의사코드
+#### 의사코드
 
 ```pseudocode
 Navie-String-Matching (T, P)
@@ -54,7 +56,7 @@ Navie-String-Matching (T, P)
 
 
 
-시간복잡도
+#### 시간복잡도
 
 $ (O (n-m+1)*m) $
 
@@ -64,7 +66,7 @@ shift가 발생했을 때의 정보가 다음번 shift에 전혀 사용되지 �
 
 
 
-C++ code
+#### C++ code
 
 ```c++
 ```
@@ -90,7 +92,7 @@ Ex) $ \sum = \\{ 0, 1, 2, ..., 9 \\} $, P[1 .. m] = 31425 일 때, p = 31, 425
 
 
 
-**String to Number**
+#### **String to Number**
 
 Horner's rule
 
@@ -114,7 +116,7 @@ $t_{7+1}$ = 10*(31415 - 10000\*3) + 2 = 14152 ($ \because T[s+5+1] = 2 $)
 
 
 
-시간복잡도
+##### 시간복잡도
 
 p, $t_0$를 계산하는 비용: $ \theta(m) $
 
@@ -126,7 +128,7 @@ m이 매우 작다면 p와 $t_s$를 구하는데 상수의 시간이 걸리겠�
 
 
 
-modulo operation
+#### modulo operation
 
 두 수를 비교할 때, 직접 두수를 비교하지 않고 나머지연산을 통해 비교할 수 있다.
 
@@ -158,7 +160,7 @@ Recalculation of p and t
 
 
 
-시간복잡도
+#### 시간복잡도
 
 $ \theta (m) $ : 전처리과정 (p와 $t_0$ 계산)
 
@@ -171,7 +173,7 @@ $ \theta((n-m+1)*m) $: worst case
 
 
 
-C++ 코드
+#### C++ 코드
 
 ```c++
 ```
@@ -182,7 +184,9 @@ C++ 코드
 
 ### KMP algorithm
 
-![image-20210726175634719](../images/image-20210726175634719.png)
+
+
+![image-20210726222229053](../images/image-20210726222229053.png)
 
 navie string matcher를 다시 생각해보면, 위의 사진 같이 앞에 **5개의 문자는 일치하지만** 마지막 6번째 문자가 달라서 같지 않다고 나오는 경우, 앞에 5개의 **문자는 일치한다는 정보**를 버리고 한칸을 shift하고 처음부터 다시 비교하게 된다.
 
@@ -192,5 +196,49 @@ KMP알고리즘은 앞에 **5개는 일치한다라는 정보**를 저장하여 
 
 
 
+#### 설계
 
+패턴 자체를 비교하여 필요한 정보를 미리 계산할 수 있습니다. 
+
+전체 문자열은 같지 않지만 부분문자열은 같은 경우, 얼마만큼 비교를 skip할 수 있을지 정보를 제공해주는 함수입니다. 
+
+위 예시의 경우 ababa까지 일치하였고 앞뒤로 <span style="color:white; background:black">aba</span>ba /  ab<span style="color:white; background:black">aba</span> 3개의 문자가 일치하고 2개의 문자가 일치하지 않으므로 2칸을 건너뛰어서 다음 비교를 실행하면 됩니다.
+
+![image-20210726222346579](../images/image-20210726222346579.png)
+
+좀 더 체계적인 용어를 사용하여 정리해보겠습니다.
+
+
+
+##### 접두사(prefix)와 접미사(suffix)
+
+- 접두사: 문자열의 첫 문자부터 차례대로 나열한 부분 문자열
+
+Ex) banana의 접두사: b, ba, ban, bana, banan, banana
+
+
+
+- 접미사: 문자열의 마지막 문자부터 차례대로 나열한 부분문자열
+
+Ex) banana의 접미사: a, na, ana, nana, anana, banana
+
+
+
+
+
+##### prefix (failure) function
+
+문자 매칭에 실패했을 때, 얼만큼 건너뛰어야 하는가에 대한 정보.
+
+ 즉, 문자 매칭에 실패하기 직전 상황에서, 접두사 / 접미사가 일치한 최대 길이
+
+
+
+
+
+**2개의 인덱스 (i, j)** 를 활용해서 실패함수를 구할 것입니다.
+
+인덱스를 증가시켜나가며 **두 문자가 일치하면 두 인덱스를 증가**시키고,
+
+일치하지 않으면 **이전까지의 상황의 실패함수를 참고**해나가며, 참고할 값이 없으면 0 이 됩니다.
 
