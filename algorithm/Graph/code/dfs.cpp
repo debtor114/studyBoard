@@ -1,54 +1,66 @@
 #include <cstdio>
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
+bool visited[100];
 vector <int> adj_list[100];
-vector <int> traversal_order;
-int visit[1000], d[1000], f[1000];
+
+int d[100], f[100];
+int E, V;
 int t = 0;
 
-void dfs (int);
-void dfs_all(int);
+void DFS(int);
+void DFS_VISIT(int);
 
-void dfs_all(int V) {
-    for (int i = 0; i < V; i++) {
-        if (visit[i] == 0) dfs(i);
+void DFS(int start) {
+    for (int u = 0; u < V; u++) {
+        if (visited[u] == false)
+            DFS_VISIT(u);
     }
 }
 
-void dfs(int start) {
-    t++;
-    d[start] = t;
-    visit[start] = 1;
+void DFS_VISIT(int u) {
 
-    traversal_order.push_back(start);
-    for (int i = 0; i < adj_list[start].size(); i++) {
-        int v = adj_list[start][i];
-        if (visit[v] == 0) {
-            dfs(v);
+    visited[u] = true;
+    t++;
+    d[u] = t;
+    printf("d[%d] = %d\n", u, d[u]);
+    
+    for (int i = 0; i < adj_list[u].size(); i++) {
+        int v = adj_list[u][i];
+        if (visited[v] == false) {
+            DFS_VISIT(v);
         }
     }
-
+    
     t++;
-    f[start] = t;
+    f[u] = t;
+    printf("f[%d] = %d\n", u, f[u]);
 }
 
 int main() {
-    int V, E;
-    scanf("%d %d", &V, &E);
+    scanf("%d %d", &E, &V);
     for (int i = 0; i < E; i++) {
-        int u, v;
-        scanf("%d %d", &u, &v);
-        adj_list[u].push_back(v);
+        int src, dst;
+        scanf("%d %d", &src, &dst);
+        adj_list[src].push_back(dst);
+        adj_list[dst].push_back(src);
     }
 
-    dfs_all(V);
-
-    for (int i = 0; i < traversal_order.size(); i++) {
-        printf("%d ", traversal_order[i]);
+    // check adj_list
+    for (int i = 0; i < V; i++) {
+        printf("v[%d]: ", i);
+        for (int j = 0; j < adj_list[i].size(); j++) {
+           printf("%d ", adj_list[i][j]);
+        }
+        printf("\n");
     }
 
+    // src = 0, run DFS
+    DFS(0);
     return 0;
+
 
 }

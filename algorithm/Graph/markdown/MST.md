@@ -1,12 +1,16 @@
 # MST (Minimum Spanning Trees)
 
+#### 선수지식: Disjoint-set, union-find
+
+
+
 **신장 트리란?**
 
 : 그래프 내의 모든 정점을 포함하는 트리
 
 
 
-**최소 신장 트리 문제**
+### **최소 신장 트리 문제**
 
 : Connected, Undirected, Weighted 그래프에서 가중치가 가장 적게 신장 트리를 만드는 문제
 <img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/MST_intro1.png?raw=true" style="zoom: 33%;" />  <img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/MST_intro2.png?raw=true" style="zoom: 33%;" />
@@ -17,7 +21,7 @@
 
   
 
-**모델 설계, 의사코드**
+#### **모델 설계, 의사코드**
 
 ```c++
 GENERIC-MST(G, w) { // G: graph, w: weight
@@ -35,7 +39,7 @@ GENERIC-MST(G, w) { // G: graph, w: weight
 
 
 
-**safe edge**
+#### **safe edge**
 
 : 트리 A가 MST의 부분집합 일 때, A에 간선 E(u, v)를 추가해도 여전히 A가 MST의 부분집합이라면 간선 E (u, v)는 safe edge라고 한다.
 
@@ -70,7 +74,7 @@ Ex)
 
 
 
-**왜 light edge는 safe한가?**
+#### **왜 light edge는 safe한가?**
 
 A를 MST의 부분집합이라고 가정하고 cut (S, V-S)는 A를 respect 할때, (u, v)가 light edge이면 A에 대해 safe edge이므로 A에 포함시킬 수 있다.
 
@@ -112,7 +116,7 @@ $ w(T^{\prime}) = w(T) - w(x, y) + w(u, v) \leq w(T) $
 
 
 
-구현
+#### 구현
 
 내림차순으로 가중치를 정렬하고 여러 트리로 구성되어 있는 숲을 만드는 것이다.
 
@@ -125,7 +129,7 @@ $ w(T^{\prime}) = w(T) - w(x, y) + w(u, v) \leq w(T) $
 
 
 
-수도코드
+#### 의사코드
 
 ```pseudocode
 MST-Kruskal (G, w)
@@ -141,7 +145,11 @@ MST-Kruskal (G, w)
 
 
 
-작동 과정
+
+
+
+
+#### 작동 과정
 
 <img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724150413769.png?raw=true" alt="image-20210724150413769" style="zoom:50%;" />
 
@@ -187,37 +195,72 @@ MST-Kruskal (G, w)
 
 
 
-코드
+#### 코드
 
 ```c++
-#include <iostream>
-#include <algorithm>
-#include <utility>
 #include <vector>
+#include <algorithm>
+#include <iostream>
+#include <tuple> 		// c++ 17 
 
 using namespace std;
 
-int main() {
-  int V, E;
-  cin >> V >> E;
-  
-  vector < tuple <int, int, int> > list, tree;
-  vector < pair <int, int> > adj_list[100];
-  
-  int weight, u, v;
-  for (int i = 0; i < E; i++) {
-    cin >> weight >> u >> v;
-    list.push_back(make_tuple(weight, u, v));
-  }
-  
-  sort(t.begin(), t.end());
-  
-  while (tree.size() != V-1) {
-    if (!cycle) tree.push(list[i]);
-  }
-  
-  return 0;
-  
+int parent[1000];
+vector < tuple <int, int, int> > Edge;
+
+int V, E;
+
+int getRoot(int x) {  
+    if (parent[x] == x) return x;
+    return parent[x] = getRoot(parent[x]);
+}
+
+void unionSet(int a, int b) { 
+    int x = getRoot(a);
+    int y = getRoot(b);
+
+    if(x < y) parent[y] = x;
+    else parent[x] = y;
+}
+
+bool find(int a, int b) { 
+    int x = getRoot(a);
+    int y = getRoot(b);
+    if(x == y) return true;
+    else return false;
+}
+
+int main() {	
+    cin >> V >> E;
+    for (int i = 0; i < E; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+
+        Edge.push_back(make_tuple(w, u, v));
+    }
+
+	sort(Edge.begin(), Edge.end());
+
+
+    for (int i = 0; i < V; i++) {
+        parent[i] = i;
+    }
+
+    int cost = 0;
+    for (int i = 0; i < Edge.size(); i++) {
+        int u, v , w;
+        u = get<1>(Edge[i]);
+        v = get<2>(Edge[i]);
+        w = get<0>(Edge[i]);
+        if (!find(u, v)) {
+            unionSet(u, v);
+            cost += w;
+        }
+    }
+
+    cout << cost << endl;
+    
+    return 0;
 }
 ```
 
@@ -225,7 +268,9 @@ int main() {
 
 
 
-시간복잡도
+#### 시간복잡도: $ O(E \log E) $
+
+
 
 
 
@@ -233,9 +278,7 @@ int main() {
 
 ## Prim's algorithm
 
-
-
-설계
+#### 설계
 
 하나의 트리 A를 만들고 그 만드는 과정에서 A는 항상 트리를 유지해야한다.
 
@@ -261,7 +304,9 @@ fringe가 빌 때 까지 Tree의 정점 t와 fringe 안에 있는 정점 중 가
 
 
 
-작동과정
+
+
+#### 작동과정
 
 <img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724154825744.png?raw=true" alt="image-20210724154825744" style="zoom:50%;" />
 
@@ -289,7 +334,7 @@ fringe가 빌 때 까지 Tree의 정점 t와 fringe 안에 있는 정점 중 가
 
 
 
-의사코드
+#### 의사코드
 
 ```pseudocode
 MST-prim (G, w, r)
@@ -314,11 +359,9 @@ MST-prim (G, w, r)
 
 
 
-코드로 보는 동작
+#### 코드로 보는 동작
 
-
-
-INF로 초기화, 임의의 정점을 root로 설정
+i. INF로 초기화, 임의의 정점을 root로 설정
 
 <img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210724160828753.png?raw=true" alt="image-20210724160828753" style="zoom:50%;" />
 
@@ -334,7 +377,7 @@ INF로 초기화, 임의의 정점을 root로 설정
 
 
 
-거리가 10에서 5로 업데이터 되면서 간선도 바뀐다 (10->3 => 5->2)
+ii. 거리가 10에서 5로 업데이터 되면서 간선도 바뀐다 (10->3 => 5->2)
 
 
 
@@ -362,16 +405,18 @@ INF로 초기화, 임의의 정점을 root로 설정
 
 
 
-C++ 코드
+#### C++ 코드
 
 ```c++
 ```
 
 
 
-시간복잡도
 
 
+#### 시간복잡도
+
+어떤 자료구조를 사용하느냐에 따라 다름
 
 
 

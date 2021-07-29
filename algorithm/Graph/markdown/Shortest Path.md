@@ -168,23 +168,23 @@ Relaxation을 통해 d[v]가 바뀌는 시점만 있습니다.
 
 
 
-<img src="../images/image-20210726141314548.png" alt="image-20210726141314548" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141314548.png" alt="image-20210726141314548" style="zoom:50%;" />
 
-<img src="../images/image-20210726141330925.png" alt="image-20210726141330925" style="zoom:50%;" />
-
-
-
-<img src="../images/image-20210726141344283.png" alt="image-20210726141344283" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141330925.png" alt="image-20210726141330925" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210726141358109.png" alt="image-20210726141358109" style="zoom:50%;" />
-
-<img src="../images/image-20210726141411704.png" alt="image-20210726141411704" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141344283.png" alt="image-20210726141344283" style="zoom:50%;" />
 
 
 
-<img src="../images/image-20210726141425783.png" alt="image-20210726141425783" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141358109.png" alt="image-20210726141358109" style="zoom:50%;" />
+
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141411704.png" alt="image-20210726141411704" style="zoom:50%;" />
+
+
+
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141425783.png" alt="image-20210726141425783" style="zoom:50%;" />
 
 
 
@@ -357,85 +357,85 @@ while (!Q.empty())
 
 s->t로 가는 최단경로 찾기
 
-![image-20210726144051054](../images/image-20210726144051054.png)
+![image-20210726144051054](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144051054.png)
 
 
 
 
 
-![image-20210726144131857](../images/image-20210726144131857.png)
+![image-20210726144131857](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144131857.png)
 
 
 
-![image-20210726144150288](../images/image-20210726144150288.png)
-
-
-
-
-
-![image-20210726144209529](../images/image-20210726144209529.png)
-
-
-
-![image-20210726144350424](../images/image-20210726144350424.png)
+![image-20210726144150288](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144150288.png)
 
 
 
 
 
-![image-20210726144401909](../images/image-20210726144401909.png)
+![image-20210726144209529](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144209529.png)
 
 
 
-![image-20210726144420765](../images/image-20210726144420765.png)
-
-![image-20210726144439133](../images/image-20210726144439133.png)
-
-
-
-![image-20210726144526881](../images/image-20210726144526881.png)
-
-
-
-![image-20210726144544516](../images/image-20210726144544516.png)
-
-
-
-![image-20210726144619949](../images/image-20210726144619949.png)
-
-
-
-![image-20210726144659741](../images/image-20210726144659741.png)
-
-
-
-![image-20210726144725395](../images/image-20210726144725395.png)
-
-
-
-![image-20210726144743500](../images/image-20210726144743500.png)
-
-
-
-![image-20210726144800422](../images/image-20210726144800422.png)
+![image-20210726144350424](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144350424.png)
 
 
 
 
 
-![image-20210726144819086](../images/image-20210726144819086.png)
+![image-20210726144401909](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144401909.png)
+
+
+
+![image-20210726144420765](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144420765.png)
+
+![image-20210726144439133](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144439133.png)
+
+
+
+![image-20210726144526881](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144526881.png)
+
+
+
+![image-20210726144544516](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144544516.png)
+
+
+
+![image-20210726144619949](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144619949.png)
+
+
+
+![image-20210726144659741](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144659741.png)
+
+
+
+![image-20210726144725395](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144725395.png)
+
+
+
+![image-20210726144743500](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144743500.png)
+
+
+
+![image-20210726144800422](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144800422.png)
 
 
 
 
 
-![image-20210726144829493](../images/image-20210726144829493.png)
+![image-20210726144819086](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144819086.png)
 
 
 
-![image-20210726144841733](../images/image-20210726144841733.png)
 
-![image-20210726144912689](../images/image-20210726144912689.png)
+
+![image-20210726144829493](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144829493.png)
+
+
+
+![image-20210726144841733](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144841733.png)
+
+![image-20210726144912689](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144912689.png)
 
 
 
@@ -536,7 +536,7 @@ p는 중간 정점이 {1,...,k-1}인 최단 경로에 의해 결정됩니다.
 
 
 
-![image-20210726154217746](../images/image-20210726154217746.png)
+![image-20210726154217746](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726154217746.png)
 
 
 
