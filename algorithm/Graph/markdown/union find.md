@@ -22,7 +22,7 @@
 
 int parent[MAX_SIZE];
 
-for (int i=0; i<MAX_SIZE; i++)
+for (int i=0; i < MAX_SIZE; i++)
   parent[i] = i;
 ```
 
@@ -43,7 +43,7 @@ int find(int x){
 
 하지만 위와 같이 find 를 구현하면 아래 같은 문제점이 발생합니다.
 
-<img src="../images/image-20210727161153414.png" alt="image-20210727161153414" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images//image-20210727161153414.png?raw=true" alt="image-20210727161153414" style="zoom:50%;" />
 
 
 
@@ -65,7 +65,7 @@ int find (int x) {
 
 루트 노드인 y 를 찾았으면 x의 부모를 바로 루트 노드로 바꿔주어 아래와 같이 바꿔주면 우리가 기대하는 트리 모양이 나와 효율적이게 됩니다. 
 
-<img src="../images/image-20210727161307584.png" alt="image-20210727161307584" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images//image-20210727161307584.png?raw=true" alt="image-20210727161307584" style="zoom:50%;" />
 
 
 
@@ -101,7 +101,7 @@ find 를 통해 각각의 root 를 찾아준 후, 두 집합의 root 가 다른 
 ```c++
 int rank[MAX_SIZE];
 
-for (int i=0; i<MAX_SIZE; i++)
+for (int i=0; i < MAX_SIZE; i++)
 	rank[i] = 1;
 ```
 
@@ -139,6 +139,8 @@ void union(int x, int y){
 우선 `parent` 배열은 음수일 경우, 부모노드로서 음수의 절대값은 size가 되고, 양수일 경우에는 부모노드를 가르키게 됩니다.
 
 예를 들어서 `parent[2] = -3` 일 경우 2번 노드 밑에 두 개의 노드가 더 있어서 총 3개의 노드가 존재한다는 의미이고, `parent[3] = 5` 일 경우에는 3번 노드의 부모가 5번 노드라는 의미입니다.
+
+
 
 ```c++
 int parent[MAX_SIZE];

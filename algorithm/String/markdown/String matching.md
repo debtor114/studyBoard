@@ -342,88 +342,152 @@ i 번째 실패함수의 값은 j + 1인 3로 변경됩니다. i와 j의 값이 
 
 찾는 문자열은 **'ababaca'** 입니다.
 
- 
+
+
+ 그리고 정확한 이해를 위해 변수 `begin`을 T의 시작 인덱스로, 일치하는 개수를 `m`이라고 하면 아래와 같은 방식으로 동작한다.
+
+- T[begin+m]==P[m]: 일치할 경우, m++
+- T[begin+m]!=P[m]: 불일치할 경우, begin이 스킵하는 만큼 증가하고 m이 실패 함수값이 된다.
+
+
 
 
 
 ![image-20210727215316843](../images/image-20210727215316843.png)
 
+- begin: 0
+- m = 0
 
-
-1번째 항목에서 **불일치**가 발생했습니다.
-
-그러므로, 우리는 0번째의 실패함수 값을 참조합니다.
+m=0, 0번째 항목에서 **불일치가** 발생했습니다. 하나도 일치하지 않은 경우이므로 바로 한칸만 건너뜁니다.
 
  ![image-20210727214721442](../images/image-20210727214721442.png)
 
-0번째 실패함수 값은 0이므로 한칸 건너뜁니다.
+
+
+
 
 
 
 ![image-20210727215719739](../images/image-20210727215719739.png)
 
-4번째 항목에서 불일치가 발생했습니다.
+- begin: 1
+- m = 3
 
-그러므로, 우리는 4번째의 실패함수 값(2)을 참조하여 건너뜁니다.
+3번째 index에서 불일치가 발생했습니다. (0부터 시작하므로 0,1,2,3 3번째 Index) 
+
+이 경우엔 m−1의 실패 함수 값 (`fail(m-1`)을 확인하는데 m개가 일치했다는 것은 인덱스 m−1까지 일치했다는 말과 동일하기 때문이다. 위에서 구했던 것처럼 `fail(2)` = 1이기 때문에 다시 T의 1번째 인덱스부터 비교하면 된다.
+
+왜냐하면 `fail(2)`=1이란 의미가 이전에 일치한 문자열 중에 접두사와 접미사가 일치하는 부분이 1개라는 뜻이기 때문에 0번째 인덱스가 일치한다는 것이 보장되기 때문이다. 
+
+ 또한 begin 값을 옮겨주어야 하는데 begin에 `m − fail(m−1)`만큼 더해주면 된다. 일치하는 만큼(m) 옮긴다음 반복되는 문자열의 길이 만큼( `fail(m−1)` ) 빼주는 개념이다. 
+
+begin = begin + m - fail(m-1) = 3이므로 3번째 index부터 다시 비교하면 된다.
+
+
 
 
 
 ![image-20210727220658972](../images/image-20210727220658972.png)
 
-2번째 항목에서 불일치가 일어났습니다. 
+- begin: 3
+- m = 1
 
-그러므로, 우리는 2번째의 실패함수 값(0)을 참조하여 한칸 건너뜁니다.
+이번에는 1번째 index에서 불일치가 일어났습니다. 
+
+마찬가지로 m = 1 이므로 fail(0) 값을 확인하고 begin = begin + m - fail(m-1) = 4이므로 4번째 index부터 다시 비교합니다.
+
+
 
 
 
 ![image-20210727220935071](../images/image-20210727220935071.png)
 
-4번째 항목에서 불일치가 발생했습니다.
+- begin: 4
+- m = 3
 
-그러므로, 우리는 4번째의 실패함수 값(2)을 참조하여 두칸 건너뜁니다.
+3번째 index에서 불일치가 발생했습니다. 마찬가지로 m = 3 이므로 fail(2) 값을 확인하고 begin = begin + m - fail(m-1) = 6이므로 6번째 index부터 다시 비교합니다.
 
 
 
- ![image-20210727221042453](../images/image-20210727221042453.png)
+ 
 
-2번째 항목에서 불일치가 일어났습니다. 
+![image-20210727221042453](../images/image-20210727221042453.png)
 
-그러므로, 우리는 2번째의 실패함수 값(0)을 참조하여 한칸 건너뜁니다.
+- begin: 6
+- m = 1
+
+1번째 index에서 불일치가 발생했습니다. 마찬가지로 m = 1 이므로 fail(0) 값을 확인하고 begin = begin + m - fail(m-1) = 7이므로 7번째 index부터 다시 비교합니다.
+
+
+
+
+
+
 
 
 
 ![image-20210727221224580](../images/image-20210727221224580.png) 
 
-원하는 패턴을 찾았습니다.
+- begin: 7
+- m = 7
+
+드디어 T를 찾았는데 이 경우에는 단순히 완전히 건너뛰면 되는 것일까?
+
+ **완전히 일치하는 경우에도 접두사와 접미사가 일치하는 부분이 존재한다.** 즉, 현재 m = 7, fail(6) = 0이므로 begin = begin + m -fail(m-1) = 14이므로 14번째 index부터 다시 비교하면 된다. 
+
+하지만 14번째 인덱스부터 남은 문자의 갯수(0)가 패턴의 길이(7)보다 작으므로 함수를 종료하면된다.
 
 
 
 
 
-## **구현 (C++)**
 
+
+#### 의사코드
+
+```pseudocode
+KMP-MATCHER(T, P)
+	n = T.length, m = P.length
+	pi = COMPUTE-PREFIX-FUCNTION(P)
+	q = 0
+	
+	for i = 1 to n
+		while (q > 0 && P[q+1] != T[i])
+			q = pi[q]
+			
+		if (P[q+1] == T[i]) q++;
+		if (q == m) {
+			print "Pattern occurs with shift" i-m
+			q = pi[q]
+		}
 ```
-#include <iostream>
 
-#define MAX_STRING	1000000
-#define MAX_WORD	1000
+
+
+#### **구현 (C++)**
+
+```c++
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-char S[MAX_STRING + 1];
-char W[MAX_WORD + 1];
-int fail[MAX_WORD];
-int result[MAX_WORD];
-int N, M, R;
 
-void getFailFunc() {
-	M = 0;
-	while (W[M]) M++;
+int fail[1000];
+
+vector <int> result;
+
+
+void getFailFunc(string P) {
+	int M = 0;
+	while (P[M]) M++;
 
 	for (int i = 1, j = 0; i < M; i++) {
-		while (j > 0 && W[i] != W[j]) j = fail[j - 1];
+		while (j > 0 && P[i] != P[j]) 
+            j = fail[j - 1];
 
-		if (W[i] == W[j]) {
+		if (P[i] == P[j]) {
 			fail[i] = ++j;
 		} else {
 			fail[i] = 0;
@@ -431,57 +495,61 @@ void getFailFunc() {
 	}
 }
 
-void KMP() {
-	getFailFunc();
-	N = 0, R = 0;
-	for (int i = 0; i < MAX_WORD; i++) result[i] = 0;
-	while (S[N]) N++;
+void KMP(string text, string pattern) {
+    int t_len = text.length();
+    int p_len = pattern.length();
 
-	for (int i = 1, j = 0; i < N; i++) {
-		while (j > 0 && S[i] != W[j]) j = fail[j - 1];
 
-		if (S[i] == W[j]) {
-			if (j == M - 1) {
-				result[R++] = i - M + 1;
-				j = fail[j];
-			}
-			else j++;
-		}
-		else j = 0;
-	}
+    int begin = 0, m = 0;
+    while(begin <= t_len - p_len) {
+        // 일치개수(m)가 P의 길이보다 작고
+        // T[begin+m]과의 문자가 일치하는 경우
+        if(m < t_len && text[begin+m] == pattern[m]){
+            m++;
+            // P를 찾은 경우에 begin값을 저장한다.
+            if(m == p_len) result.push_back(begin);
+        }
+        // 불일치하거나 P를 찾은 경우
+        else {
+            // 일치한적이 한번도 없고 불일치했다면 단순히 begin 옮기면 된다.
+            if(m == 0)
+                begin++;
+            // 그게 아니라면 begin과 m을 위에서 말한 것처럼 초기화!
+            else {
+                begin += (m - fail[m-1]);
+                m = fail[m-1];
+            }
+        }
+    }
 }
 
-int m_strcmp(const char* str1, const char* str2) {
-	int i = 0, j = 0;
 
-	while (str1[i] != '\0' || str2[j] != '\0') {
-		if (str1[i] != str2[j]) return str1[i] - str2[j];
-		else {
-			i++; j++;
-		}
-	}
-
-	return 0;
-}
 
 int main(void) {
-	cin.tie(NULL);
-	ios::sync_with_stdio(false);
+    string T, P;
+	cin >> T >> P;
 
-	cin >> S;
+    getFailFunc(P);
+
+    KMP(T, P);
+    if (result.empty()) cout << P << " 는 없는 단어입니다.\n";
+    else {
+        for (int i = 0; i < result.size(); i++) {
+            cout << result[i] << "인덱스부터 일치합니다.\n";
+        }
+    }
 	
-	while (true) {
-		cin >> W;
-		if (!m_strcmp(W, "q")) break;
-
-		KMP();
-		if (R == 0) cout << W << " 는 없는 단어입니다.\n";
-		else
-			for (int i = 0; i < R; i++) {
-				cout << result[i] + 1 << "번째 위치에서 발견하였습니다.\n";
-			}
-	}
 
 	return 0;
 }
 ```
+
+
+
+
+
+#### 시간복잡도
+
+- 실패함수 계산 : Θ(*m*)
+- KMP-MATCHER : Θ(*n*)
+

@@ -59,7 +59,7 @@ cf> **Negative-weight edge**
 
 
 
-### 1. Single-Source Path
+## 1. Single-Source Path
 
 임의의 정점 하나에서 시작해서 모든 정점까지의 거리를 구하는 문제
 
@@ -113,9 +113,9 @@ Relaxation(u,v,w) {
 
 
 
-#### Bellman-Ford Algorithm
+### Bellman-Ford Algorithm
 
-**개요**
+#### **개요**
 
 - 간선 가중치가 음수여도 가능한 단일 출발점 최단경로 알고리즘이다.
 
@@ -130,7 +130,7 @@ Relaxation(u,v,w) {
 
 
 
-**의사코드**
+#### **의사코드**
 
 ```c++
 BELLMAN-FORD(V, E, w, s) {
@@ -162,39 +162,39 @@ BELLMAN-FORD(V, E, w, s) {
 
 
 
-**동작과정**
+#### **동작과정**
 
 Relaxation을 통해 d[v]가 바뀌는 시점만 있습니다. 
 
 
 
-<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141314548.png" alt="image-20210726141314548" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141314548.png?raw=true" alt="image-20210726141314548" style="zoom:50%;" />
 
-<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141330925.png" alt="image-20210726141330925" style="zoom:50%;" />
-
-
-
-<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141344283.png" alt="image-20210726141344283" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141330925.png?raw=true" alt="image-20210726141330925" style="zoom:50%;" />
 
 
 
-<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141358109.png" alt="image-20210726141358109" style="zoom:50%;" />
-
-<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141411704.png" alt="image-20210726141411704" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141344283.png?raw=true" alt="image-20210726141344283" style="zoom:50%;" />
 
 
 
-<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141425783.png" alt="image-20210726141425783" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141358109.png?raw=true" alt="image-20210726141358109" style="zoom:50%;" />
+
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141411704.png?raw=true" alt="image-20210726141411704" style="zoom:50%;" />
 
 
 
-**시간복잡도**: $ O (V*E) $ 		
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726141425783.png?raw=true" alt="image-20210726141425783" style="zoom:50%;" />
+
+
+
+#### **시간복잡도**: $ O (V*E) $ 		
 
 why?  |V| - 1만큼 relaxation을 해주기 때문
 
 
 
-**c++ 코드**
+#### **c++ 코드**
 
 ```c++
 // 벨만포드 알고리즘은  따로 인접리스트나 인접행렬을 만들어 주지 않아도 된다.
@@ -275,14 +275,14 @@ int main() {
 
 
 
-#### Single Source in DAG
+### Single Source in DAG
 
 - DAG이기 때문에 싸이클이 없습니다.
 - DAG의 모든 경로는 토폴로지로 정렬된 하위 시퀀스이므로 왼쪽에서 오른쪽으로 각 최단 경로의 정점을 처리한 다음 한 번에 수행됩니다.
 
 
 
-의사코드
+#### 의사코드
 
 ```pseudocode
 DAG-SHORTEST-PATHS(V, E, w, s)
@@ -295,7 +295,7 @@ DAG-SHORTEST-PATHS(V, E, w, s)
 
 
 
-**시간복잡도**: $ \theta (V+E) $ 		
+#### **시간복잡도**: $ \theta (V+E) $ 		
 
 
 
@@ -303,9 +303,9 @@ DAG-SHORTEST-PATHS(V, E, w, s)
 
 
 
- #### Dijkstra Algorithm
+ ### Dijkstra Algorithm
 
-**개요**
+#### **개요**
 
 - 음이 아닌 정수인 가중치 그래프에 대해서만 사용 가능
 - BFS와 비슷하다 (가중치 있는 버전의 BFS)
@@ -316,7 +316,7 @@ DAG-SHORTEST-PATHS(V, E, w, s)
 
 
 
-설계
+#### 설계
 
 ```
 두 개의 정점 세트가 있습니다.
@@ -332,7 +332,7 @@ DAG-SHORTEST-PATHS(V, E, w, s)
 
 
 
-의사 코드
+#### 의사 코드
 
 ```pseudocode
 Dijkstra (G, w, s)
@@ -353,93 +353,93 @@ while (!Q.empty())
 
 
 
-동작
+#### 동작
 
 s->t로 가는 최단경로 찾기
 
-![image-20210726144051054](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144051054.png)
+![image-20210726144051054](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144051054.png?raw=true)
 
 
 
 
 
-![image-20210726144131857](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144131857.png)
+![image-20210726144131857](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144131857.png?raw=true)
 
 
 
-![image-20210726144150288](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144150288.png)
-
-
-
-
-
-![image-20210726144209529](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144209529.png)
-
-
-
-![image-20210726144350424](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144350424.png)
+![image-20210726144150288](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144150288.png?raw=true)
 
 
 
 
 
-![image-20210726144401909](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144401909.png)
+![image-20210726144209529](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144209529.png?raw=true)
 
 
 
-![image-20210726144420765](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144420765.png)
-
-![image-20210726144439133](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144439133.png)
-
-
-
-![image-20210726144526881](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144526881.png)
-
-
-
-![image-20210726144544516](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144544516.png)
-
-
-
-![image-20210726144619949](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144619949.png)
-
-
-
-![image-20210726144659741](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144659741.png)
-
-
-
-![image-20210726144725395](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144725395.png)
-
-
-
-![image-20210726144743500](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144743500.png)
-
-
-
-![image-20210726144800422](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144800422.png)
+![image-20210726144350424](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144350424.png?raw=true)
 
 
 
 
 
-![image-20210726144819086](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144819086.png)
+![image-20210726144401909](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144401909.png?raw=true)
+
+
+
+![image-20210726144420765](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144420765.png?raw=true)
+
+![image-20210726144439133](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144439133.png?raw=true)
+
+
+
+![image-20210726144526881](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144526881.png?raw=true)
+
+
+
+![image-20210726144544516](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144544516.png?raw=true)
+
+
+
+![image-20210726144619949](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144619949.png?raw=true)
+
+
+
+![image-20210726144659741](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144659741.png?raw=true)
+
+
+
+![image-20210726144725395](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144725395.png?raw=true)
+
+
+
+![image-20210726144743500](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144743500.png?raw=true)
+
+
+
+![image-20210726144800422](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144800422.png?raw=true)
 
 
 
 
 
-![image-20210726144829493](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144829493.png)
+![image-20210726144819086](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144819086.png?raw=true)
 
 
 
-![image-20210726144841733](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144841733.png)
-
-![image-20210726144912689](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144912689.png)
 
 
+![image-20210726144829493](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144829493.png?raw=true)
 
-코드
+
+
+![image-20210726144841733](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144841733.png?raw=true)
+
+![image-20210726144912689](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726144912689.png?raw=true)
+
+
+
+#### 코드
 
 ```c++
 ```
@@ -452,7 +452,7 @@ s->t로 가는 최단경로 찾기
 
 
 
-시간복잡도
+#### 시간복잡도
 
 - 바이너리 힙: $ O (E \log V) $
 - 피보나치 힙: $ O (V \log V + E) $
@@ -463,7 +463,7 @@ s->t로 가는 최단경로 찾기
 
 
 
-### 2. All Pairs Shortest Path
+## 2. All Pairs Shortest Path
 
 모든 정점에 대해 최단경로를 찾으려면 앞서 살펴본 다익스트라, 벨만포드 알고리즘을 정점의 갯수만큼 반복하면 될 것이다. 그렇다면 시간복잡도는 아래와 같다.
 
@@ -481,11 +481,11 @@ s->t로 가는 최단경로 찾기
 
 
 
-#### Floyd-Warshall Algorithm
+### Floyd-Warshall Algorithm
 
 
 
-개요
+#### 개요
 
 - 음의 가중치 간선 허용
 - 음의 가중치 사이클은 없다고 가정한다.
@@ -495,56 +495,364 @@ s->t로 가는 최단경로 찾기
 
 
 
-설계
+#### 설계
 
-- Intermediate vertex
+다이나믹 프로그래밍 패러다임
+
+ i에서 j까지 갈 때 **다이렉트로 가는게 더 비용이 적은가** 아니면 **i와 j사이에 있는 어떤 정점 k를 들렀다 가는 것이 더 비용이 적은가** 비교하며 값을 저장하는 과정이다. 그리고 그 와중에 어떻게 다이나믹 프로그래밍을 접목시키는지 논리적으로 전개하는 과정이다.
+
+출발점은 i, 도착점은 j라고 약속한다.
+
+
+
+##### Intermediate vertex
 
 경로 p ($ <v_1, ..., v_L> $)에서 $ v_1, v_L $을 제외한 모든 정점 ( $ \\{ v_2, ... v_{L-1} \\} $ )
 
 
 
-V의 모든 정점 i,j 쌍에 대하여, 경로 p를 중간 정점이 {1,2,...,k}인 i에서 j까지의 모든 경로의 최소 가중치 경로라고 합니다.
-
-중간 정점이 {1,2,...,k-1}인 i에서 j까지의 모든 최단 경로가 있다고 가정합니다.
-
-경로 p와 중간 정점이 {1,2,...,k-1}인 i에서 j까지의 모든 최단 경로의 관계를 관찰합니다.
-
-
-
-최단경로는 같은 정점을 두번 포함하지 않습니다.
-
-증명) 동일한 정점을 두 번 포함하는 경로에는 사이클이 포함됩니다. 사이클을 제거하면 더 짧은 경로가 제공됩니다.
 
 
 
 
+1에서 N까지 번호가 매겨진 V를 정점 집합으로 갖는 그래프 G가 있다고 가정하자.
 
-p는 중간 정점이 {1,...,k-1}인 최단 경로에 의해 결정됩니다.
-
-- Case1: k가 경로 p의 중간 정점이 아닌 경우.
-   경로 p는 i에서 j까지의 최단 경로이며 {1,...k-1}의 중간 경로입니다.
+**shortestPath(i, j, k)**: i에서 j로 집합 {1, 2, ..., k} 의 꼭짓점들 만을 경유지로 거쳐 가는 최단 경로를 반환하는 함수
 
 
 
-- Case2: k가 경로 p의 중간 정점인 경우.
-
-  – 경로 p는 i -- p1→k - p2→j로 나눌 수 있습니다.
-
-  – p1은 집합 {1,2,...,k} 또는 {1,2,...,k-1}의 모든 중간 정점이 있는 i에서 k까지의 최단 경로입니다.
-
-  – p2는 {1,2,...,k} 또는 {1,2,...,k-1}을 사용하여 k에서 j까지의 최단 경로입니다.
+함수가 주어졌을 때, 목표는 {1, 2, ..., N} 에 있는 꼭짓점만을 이용해서 모든 꼭지점 i에서 모든 꼭짓점 j로 가는 최단 경로를 찾는 것이다.
 
 
 
-![image-20210726154217746](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726154217746.png)
+각각 (i, j, k) 쌍에 대하여 **shortestPath(i, j, k)**는 다음 중 한개이다.
+
+- Case1: k를 중간 정점으로 갖지 않는 경로 ( 집합 {1, ...., k-1}에 있는 꼭짓점만 거쳐간다.)
+
+- Case2: k를 중간 정점으로 갖는 경로 i에서 k까지와, k에서 j까지 가는 경로 모두 {1, 2, ...., k-1}에 있는 꼭짓점만을 거쳐간다.
 
 
 
-Recursive Solution
+i에서 j까지 1에서 k-1의 꼭짓점 만을 거쳐가는 경로 중 최선의 경로는 shortestPath(i, j, k-1)에 의해 정의되고 만약 i에서 k를 거쳐 j로 가는 더 나은 경로가 있다면, 그 경로는 i에서 k까지 ({1, ..., k-1}만 거쳐서) 가는 경로와 k에서 j까지 ({1, ..., k-1}만 거쳐서) 가는 경로를 합친 것이라는 것은 자명하다.
 
-$ d_{ij}^{(k)} $는 경로의 모든 중간 정점이 집합 {1,2,...,k}에 있도록 i에서 j까지의 최단 경로 길이입니다.
 
-$ D^{(k)} $ 는 n x n 행렬 $ [d_{ij}^{(k)}] $
 
-$ d_{ij}^{(0)} $ 은 
+![image-20210726154217746](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210726154217746.png?raw=true)
+
+
+
+
+
+##### Recursive Solution
+
+shortestPath(i, j, k)를 $ d_{ij}^{(k)} $로 정의하자.
+
+w(i, j)를 i와 j간의 변의 가중치라면 shortestPath(i, j, k)를 다음의 재귀적 공식으로 정의할 수 있다.
+
+- 기본적인 경우는 $ d_{ij}^{(0)}  = w(i, j) $
+
+- 재귀적인 경우는 $ d_{ij}^{(k)} $ = min(shorestPath(i, j, k-1), shortestPath(i, k, k-1) + shortestPath(k, j, k-1))
+
+$ d\_{ij}^{(k)} = \left\{\begin{matrix}
+ w\_{ij}& (k =0) \\\
+ min(d\_{ij}^{(k-1)}, d\_{ik}^{(k-1)}+d_{kj}^{(k-1)})& (k \geq 1) \\\ 
+\end{matrix}\right. $
+
+
+
+이 공식은 플로이드-워셜 알고리즘의 핵심이다. 이 알고리즘은 처음에 모든 (i, j) 쌍에 대해서 k = 1일 때 shortestPath(i, j, k)를 계산하고 다음으로 k=2일 때를 계산하는 식으로 k=N이 될 때까지 계속하면, 모든 (i, j) 쌍에 대해서 최단 경로를 찾게 된다.
+
+
+
+##### pred[i, j] (predecessor pointers): **i에서 j로 가는 경로의 중간 정점**
+
+
+
+모든 pred[i, j]는 초기엔 nil 값으로 설정된다.
+
+중간 정점 k를 지나는 i에서 j까지의 최단 경로가 발견될 때마다 pred[i,j] = k로 설정합니다.
+
+- pred[i, j] = nil: 최단 경로가 존재하지 않는다.
+- pred[i,j] = i: 최단 경로가 존재하고 최단 경로에 중간 정점이 없는경우, 즉 최단거리는 간선 (i, j)이다.
+
+- pred[i,j] = k: 최단 경로가 존재하고 k는 i에서 j까지의 중간 정점
+
+
+
+- pred[i,j] = i: 최단거리는 간선 (i, j)이다.
+
+- pred[i, j] = i가 아닌 경우: (i, pred[i, j]) 와 (pred[i, j], j)를 재귀적으로 계산한다.
+
+```pseudocode
+Floyd-Warshall (w, n) {
+
+	let dist be a |n| × |n| array of minimum distances initialized to ∞ (infinity)
+	
+	// initialize
+	for i = 1 to n 
+		for j = 1 to n
+			do D(0)[i,j] = w[i,j];
+			if (i == j) pred[i, j] = i;
+			else pred[i,j] = NIL;
+	
+			
+
+	for k = 1 to n
+		for i = 1 to n
+			for j = 1 to n
+				if (d(k-1)[i,k] + d(k-1)[k,j] < d(k-1)[i,j]) {	// case 2
+					d(k)[i,j] = d(k-1)[i,k] + d(k-1)[k, j];
+          pred[i, j] = k;
+				}
+				
+				else d(k)[i,j] = d(k-1)[i, j];									// case 1
+				
+				
+	return d(n)[1...n, 1...n];
+}
+```
+
+
+
+
+
+#### 동작
+
+![image-20210730144122604](../images/image-20210730144122604.png)
+
+
+
+
+
+![image-20210730144324607](../images/image-20210730144324607.png)
+
+
+
+![image-20210730144431816](../images/image-20210730144431816.png)
+
+
+
+![image-20210730144510949](../images/image-20210730144510949.png)
+
+1번 정점에서 0번 정점을 중간정점으로 3번 정점으로 가니까 더 가중치가 낮은 간선이 되었으므로 업데이트 한다.
+
+
+
+![image-20210730144732576](../images/image-20210730144732576.png)
+
+
+
+![image-20210730144805992](../images/image-20210730144805992.png)
+
+3번에서 0번으로 가는 간선이 없으므로 아무일도 일어나지 않았다.
+
+
+
+![image-20210730144857788](../images/image-20210730144857788.png)
+
+0번에서 1번으로 가는 간선이 없으므로 아무일도 일어나지 않았다.
+
+
+
+![image-20210730144936753](../images/image-20210730144936753.png)
+
+
+
+![image-20210730145255980](../images/image-20210730145255980.png)
+
+
+
+2번에서 1번으로 가는 간선이 없으므로 아무일도 일어나지 않았다.
+
+
+
+![image-20210730145412318](../images/image-20210730145412318.png)
+
+
+
+![image-20210730145515182](../images/image-20210730145515182.png)
+
+
+
+![image-20210730145809133](../images/image-20210730145809133.png)
+
+아무일도 없었고요
+
+
+
+![image-20210730145844593](../images/image-20210730145844593.png)
+
+
+
+![image-20210730150103426](../images/image-20210730150103426.png)
+
+
+
+![image-20210730150332746](../images/image-20210730150332746.png)
+
+![image-20210730150357665](../images/image-20210730150357665.png)
+
+3번에서 2번으로 가는 간선이 없으므로 아무일도 일어나지 않았다.
+
+
+
+![image-20210730150530803](../images/image-20210730150530803.png)
+
+![image-20210730150643803](../images/image-20210730150643803.png)
+
+
+
+귀찮아서 못했는데 경로 가중치가 업데이트 될때마다 `pred[i][j] = k` 로 업데이트 하면 경로복원도 가능하다.
+
+
+
+#### Negative cycle
+
+**i번 노드에 대해 dist\[i][i] = 0으로 초기화**했었다.
+
+자기 자신에서 출발해 자기 자신에게 돌아오는 경로의 가중치는 절대 0보다 작아질 수 없기 때문이다.
+
+하지만 그래프에 음의 사이클이 존재한다면, 그 사이클에 포함된 노드를 k라 했을 때 dist[k][k]가 음수 값을 가지게 된다.
+
+따라서, 플로이드 알고리즘을 적용한 후,
+
+**모든 노드의 번호 i에 대해 dist[i][i]가 0인지 확인해줌으로써 음의 사이클 존재 여부를 판단**할 수 있다.
+
+
+
+
+
+#### C++ 코드
+
+```c++
+#include <iostream>
+#include <vector>
+#include <algorithm>
+ 
+#define INF 99999999
+ 
+using namespace std;
+typedef pair<int, int> p;
+ 
+int dist[5][5];
+ 
+void floyd() {
+    for (int k = 0; k < 4; k++) {
+        //가능한 모든 from, to 쌍에 대해 dist를 갱신한다.
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+            }
+        }
+    }
+}
+ 
+ 
+void init() {
+    for (int i = 1; i <= 4; i++)
+        for (int j = 1; j <= 4; j++)
+            dist[i][j] = INF;
+ 
+    for (int i = 1; i <= 4; i++) dist[i][i] = 0;
+ 
+    dist[1][3] = -3;
+    dist[1][4] = 2;
+ 
+    dist[2][1] = 3;
+    dist[2][3] = -1;
+    dist[2][4] = 7;
+ 
+    dist[3][1] = 5;
+    dist[3][4] = 4;
+ 
+    dist[4][2] = 3;
+}
+ 
+int main() {
+    init();
+    floyd();
+ 
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            if (dist[i][j] == INF) printf("- ");
+            else printf("%d ", dist[i][j]);
+        }
+        printf("\n");
+    }
+ 
+    return 0;
+}
+
+```
+
+
+
+
+
+#### 시간복잡도: $ \theta (|V|^3) $
+
+
+
+
+
+#### cf> Transitive closure (공사중)
+
+원하는 정점이 서로 직접 혹은 간접적으로 연결되어 있냐를 확인하는 그래프
+
+
+
+```
+• 주어진 방향 그래프 G = (V, E)
+• 계산 G* = (V, E* )
+• E* = {(i,j) : G에 i에서 j까지의 경로가 있음}
+• 각 가장자리에 1의 가중치를 할당한 다음 FLOYD-WARSHALL을 실행할 수 있습니다.
+• dij < n이면 i에서 j까지의 경로가 있습니다.
+• 그렇지 않으면 dij = INF이고 경로가 없습니다.
+
+
+논리 연산 (OR), (AND) 사용
+• 각 모서리에 가중치 1을 할당한 다음 이 가중치로 FLOYD-WARSHALL을 실행합니다.
+
+
+```
+
+
+
+$ D^{(k)} $ 대신 $ T^{(k)} = (t_{ij}^{(k)}) $ 를 사용한다.
+$$
+t_{ij}^{(0)} = \left\{\begin{matrix} 
+0 & i\not= j \ and \ (i, j) \notin E \\
+1 & i=j\ or \ (i, j) \in E
+\end {matrix}\right. 
+
+
+
+\\ t_{ij}^{(k)} = \left\{\begin{matrix} 
+1 \ \ \ (if \ there \ is \ a \ path \ from \ i \ to \ j \ with \ all \ intermediate \ vertices \ in \ \{1, 2,3, ..., k\}) \\
+= (t_{ij}^{k-1} = 1) \ or (t_{ik}^{(k-1)} = 1 \ and \  t_{kj}^{k-1}=1)
+\\
+0 \ (otherwise)
+
+
+\end {matrix}\right.
+$$
+
+
+```pseudocode
+TRANSITIVE-CLOSURE(E, n) 
+
+for i = 1 to n
+	for j = 1 to n
+		if (i=j or (i, j) in E) then tij(0) = 1 
+		else tij(0) = 0
+
+for k = 1 to n
+	for i = 1 to n
+		for j = 1 to n
+			tij(k) = tij(k-1) or (tik(k-1) and tkj(k-1))
+
+return T(n)
+```
+
+
 
