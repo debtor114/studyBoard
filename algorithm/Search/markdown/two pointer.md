@@ -2,7 +2,7 @@
 
 어떤 특정 조건을 만족하는 연속 구간을 구할 때  $ O(N) $ 으로 풀 수 있도록 도와주는 알고리즘
 
-![image-20210731184716204](../images/image-20210731184716204.png)
+![image-20210731184716204](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731184716204.png?raw=true)
 
 - 리스트에 순차적으로 접근해야 할 때 **두 개의 점의 위치를 기록하면서 처리**하는 알고리즘
 - 정렬되어있는 두 리스트의 합집합에도 사용됨. 병합정렬(merge sort)의 counquer 영역의 기초가 되기도 합니다.
@@ -44,7 +44,7 @@ ii. 특정 조건을 만족시키면 start 포인터를 증가시키고 start와
 
 i. 시작점과 끝점이 첫번째 원소의 인덱스를 가리키도록 합니다.
 
-![image-20210731184744378](../images/image-20210731184744378.png)
+![image-20210731184744378](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731184744378.png?raw=true)
 
 - 부분 합: 4
 - 카운트 : 0
@@ -55,7 +55,7 @@ i. 시작점과 끝점이 첫번째 원소의 인덱스를 가리키도록 합�
 
 ii. 부분 합 < 51 이므로 end 포인터 이동
 
-![image-20210731184757821](../images/image-20210731184757821.png)
+![image-20210731184757821](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731184757821.png?raw=true)
 
 - 부분 합 : 29 (4 + 25)
 - 카운트 : 0
@@ -66,7 +66,7 @@ ii. 부분 합 < 51 이므로 end 포인터 이동
 
 iii. 부분 합 >= 51 이므로 start 포인터 이동
 
-![image-20210731184810771](../images/image-20210731184810771.png)
+![image-20210731184810771](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731184810771.png?raw=true)
 
 - 부분 합 : 93
 - 카운트 : 1
@@ -79,7 +79,7 @@ iii. 부분 합 >= 51 이므로 start 포인터 이동
 
 iv. 부분 합 >= 51 이므로 start 포인터 이동
 
-![image-20210731184824113](../images/image-20210731184824113.png)
+![image-20210731184824113](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731184824113.png?raw=true)
 
 - 부분 합 : 89
 - 카운트 : 2
@@ -90,7 +90,7 @@ iv. 부분 합 >= 51 이므로 start 포인터 이동
 
 v. 부분 합 >= 51 이므로 start포인터 1칸 이동
 
-![image-20210731184837277](../images/image-20210731184837277.png)
+![image-20210731184837277](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731184837277.png?raw=true)
 
 - 부분 합 : 64
 - 카운트 : 3
@@ -103,7 +103,7 @@ v. 부분 합 >= 51 이므로 start포인터 1칸 이동
 
 vi. 부분 합 >= 51 이므로 start 포인터 이동
 
-![image-20210731191037153](../images/image-20210731191037153.png)
+![image-20210731191037153](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731191037153.png?raw=true)
 
 - 부분 합: 0 (start ~ end 까지의 값인데 모순이 발생했으므로 0)
 - 카운트: 3
@@ -118,7 +118,7 @@ vi. 부분 합 >= 51 이므로 start 포인터 이동
 
 vii. 부분 합 < 51 이므로 end 포인터 이동
 
-![image-20210731184929483](../images/image-20210731184929483.png)
+![image-20210731184929483](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731184929483.png?raw=true)
 
 - 부분합: 1
 - 카운트: 3
@@ -131,7 +131,7 @@ vii. 부분 합 < 51 이므로 end 포인터 이동
 
 ix. 부분 합 < 51 이므로 end 포인터 이동
 
-![image-20210731185021394](../images/image-20210731185021394.png)
+![image-20210731185021394](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731185021394.png?raw=true)
 
 - 부분합: 24
 - 카운트: 3
@@ -140,7 +140,7 @@ ix. 부분 합 < 51 이므로 end 포인터 이동
 
 x. 부분 합 < 51 이므로 end 포인터 이동
 
- ![image-20210731185033206](../images/image-20210731185033206.png)
+ ![image-20210731185033206](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731185033206.png?raw=true)
 
 - 부분합: 26
 - 카운트: 3
@@ -149,7 +149,7 @@ x. 부분 합 < 51 이므로 end 포인터 이동
 
 xi. 부분 합 < 51 이므로 end 포인터 이동
 
-![image-20210731185214788](../images/image-20210731185214788.png)
+![image-20210731185214788](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731185214788.png?raw=true)
 
 - 부분합: 36
 - 카운트: 3
@@ -160,7 +160,7 @@ xi. 부분 합 < 51 이므로 end 포인터 이동
 
 xii. 부분 합 < 51 이므로 end 포인터 이동
 
-![image-20210731185242459](../images/image-20210731185242459.png)
+![image-20210731185242459](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731185242459.png?raw=true)
 
 - 부분합: 39
 - 카운트: 3
@@ -169,7 +169,7 @@ xii. 부분 합 < 51 이므로 end 포인터 이동
 
 부분 합 < 51 이므로 end 포인터 이동
 
-![image-20210731185316746](../images/image-20210731185316746.png)
+![image-20210731185316746](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210731185316746.png?raw=true)
 
 - 부분합: 41
 - 카운트: 3

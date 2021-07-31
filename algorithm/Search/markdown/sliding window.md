@@ -6,7 +6,7 @@
 
 예를들어 정수로 이루어진 배열 [4, 25, 64, 1, 23, 2, -10, 3, 2] 에서 길이가 3인 서브배열의 합계가 가장 큰 서브배열은 무엇인가? 같은 문제에서 사용될 수 있다.
 
-![image-20210730214715835](../images/image-20210730214715835.png)
+![image-20210730214715835](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210730214715835.png?raw=true)
 
 
 
@@ -59,13 +59,13 @@ int main() {
 
 서브 배열의 요소를 순회하다 보면 중복되는 요소들이 존재한다.
 
-![image-20210730220146173](../images/image-20210730220146173.png)
+![image-20210730220146173](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210730220146173.png?raw=true)
 
 범위가 3인 서브배열을 탐색하는 경우 0~2 범위의 서브배열과 1~3 범위의 서브배열은 공통적으로 1~2 범위가 중복된다. 중복되는 요소(공통 요소)들을 재사용하는 방법이 슬라이딩 윈도우 알고리즘의 핵심이다.
 
 각 루프마다 어떤식으로 진행되는지 이미지를 보면서 이해해보자.
 
-![image-20210730221351274](../images/image-20210730221351274.png)
+![image-20210730221351274](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210730221351274.png?raw=true)
 
 
 
@@ -128,6 +128,4 @@ int main() {
   return 0;
   
 }
-
-// 결과: 25 (7 + 10 + 8)
 ```

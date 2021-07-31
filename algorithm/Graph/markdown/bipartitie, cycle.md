@@ -2,7 +2,7 @@
 
 사이클은 첫 번째 정점과 마지막 정점이 동일한 경로입니다.
 
-<img src="../images/image-20210727143331460.png" alt="image-20210727143331460" style="zoom:50%;" /> 
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210727143331460.png?raw=true" alt="image-20210727143331460" style="zoom:50%;" /> 
 
 
 
@@ -53,7 +53,7 @@ DFS에서 정점의 상태는 3가지이다. 1. 흰색 (방문x) 2. 회색(방�
 
  
 
-<img src="../images/image-20210727143917563.png" alt="image-20210727143917563" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210727143917563.png?raw=true" alt="image-20210727143917563" style="zoom:50%;" />
 
 
 
@@ -130,7 +130,7 @@ void testGraph(graph g) {
 
 
 
-![image-20210727152121023](../images/image-20210727152121023.png)
+![image-20210727152121023](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210727152121023.png?raw=true)
 
 
 
