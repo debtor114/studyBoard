@@ -6,7 +6,7 @@
 
 Ex) 3번 인덱스에서 8번 인덱스까지의 합을 구하는 방법은?
 
-![image-20210810163039684](../images/image-20210810163039684.png)
+![image-20210810163039684](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210810163039684.png?raw=true)
 
 
 
@@ -16,7 +16,7 @@ Ex) 3번 인덱스에서 8번 인덱스까지의 합을 구하는 방법은?
 
 단순히 선형적으로 구하는 방법을 생각해봅시다.
 
-![image-20210810163056189](../images/image-20210810163056189.png)
+![image-20210810163056189](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210810163056189.png?raw=true)
 
 
 
@@ -30,7 +30,7 @@ Ex) 3번 인덱스에서 8번 인덱스까지의 합을 구하는 방법은?
 
 트리 구조의 특성상 합을 구할 때 시간 복잡도 $ **O(logN)** $이면 됩니다. 위에서 언급한 단순히 더하는 방법보다 빠르게 구하기 위한 것입니다. 일단 기존의 배열을 다음과 같이 트리 구조라고 고려해보도록 합시다.
 
-<img src="../images/image-20210810164205237.png" alt="image-20210810164205237" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210810164205237.png?raw=true" alt="image-20210810164205237" style="zoom:50%;" />
 
 
 
@@ -40,7 +40,7 @@ Ex) 3번 인덱스에서 8번 인덱스까지의 합을 구하는 방법은?
 
  빠르게 합을 구하기 위해서 '**구간 합 트리**'를 새롭게 생성해주어야 합니다. 
 
-![image-20210810164832712](../images/image-20210810164832712.png)
+![image-20210810164832712](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210810164832712.png?raw=true)
 
 먼저 최상단 노드에는 전체 원소를 더한 값이 들어갑니다.
 
@@ -48,7 +48,7 @@ Ex) 3번 인덱스에서 8번 인덱스까지의 합을 구하는 방법은?
 
 
 
-![image-20210810164925941](../images/image-20210810164925941.png)
+![image-20210810164925941](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210810164925941.png?raw=true)
 
 두 번째 노드는 인덱스 0부터 인덱스 4까지의 원소를 더한 값을 가지고, 
 
@@ -56,7 +56,7 @@ Ex) 3번 인덱스에서 8번 인덱스까지의 합을 구하는 방법은?
 
 말 그대로 원래 데이터의 범위를 반씩 **분할**하며 그 구간의 합들을 저장하도록 초기 설정을 하는 것입니다. 이러한 과정을 반복하면 구간 합 트리의 전체 노드를 구할 수 있습니다.
 
-![image-20210810165830126](../images/image-20210810165830126.png)
+![image-20210810165830126](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210810165830126.png?raw=true)
 
 
 
@@ -77,7 +77,7 @@ int init(int start, int end, int node) {
 
 구간 합 트리는 다음과 같이 매 노드가 구간의 합을 가지고 있는 형태입니다. 노드의 인덱스와 구간의 합은 별개의 값이므로 헷갈리지 않도록 합니다.
 
-![image-20210810170030522](../images/image-20210810170030522.png)
+![image-20210810170030522](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210810170030522.png?raw=true)
 
 
 
@@ -95,7 +95,7 @@ int init(int start, int end, int node) {
 
 트리 구조를 가지고 있기 때문에 데이터를 탐색함에 있어서 들이는 비용은 O(logN)입니다. 따라서 구간 합을 항상 O(logN)의 시간에 구할 수 있습니다. **3~8의 범위에 대한 합**을 구하려고 해봅시다. 그러면 다음과 같이 세 노드의 합만 구해주면 됩니다.
 
-![image-20210810170140367](../images/image-20210810170140367.png)
+![image-20210810170140367](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210810170140367.png?raw=true)
 
 
 
@@ -137,7 +137,7 @@ int sum(int start, int end, int node, int left, int right) {
 
  예를 들어 원 배열 인덱스 5의 노드를 수정한다고 하면 다음과 같이 5개의 구간 합 노드를 모두 수정하면 됩니다.
 
-![image-20210810171058333](../images/image-20210810171058333.png)
+![image-20210810171058333](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210810171058333.png?raw=true)
 
 
 
