@@ -247,11 +247,11 @@ Floyd-Warshall (w, n) {
 
 자기 자신에서 출발해 자기 자신에게 돌아오는 경로의 가중치는 절대 0보다 작아질 수 없기 때문이다.
 
-하지만 그래프에 음의 사이클이 존재한다면, 그 사이클에 포함된 노드를 k라 했을 때 dist[k][k]가 음수 값을 가지게 된다.
+하지만 그래프에 음의 사이클이 존재한다면, 그 사이클에 포함된 노드를 k라 했을 때 dist\[k][k]가 음수 값을 가지게 된다.
 
 따라서, 플로이드 알고리즘을 적용한 후,
 
-**모든 노드의 번호 i에 대해 dist[i][i]가 0인지 확인해줌으로써 음의 사이클 존재 여부를 판단**할 수 있다.
+**모든 노드의 번호 i에 대해 dist\[i][i]가 0인지 확인해줌으로써 음의 사이클 존재 여부를 판단**할 수 있다.
 
 
 
@@ -262,61 +262,69 @@ Floyd-Warshall (w, n) {
 ```c++
 #include <iostream>
 #include <vector>
+#include <cstdio>
 #include <algorithm>
  
 #define INF 99999999
  
 using namespace std;
-typedef pair<int, int> p;
+
+int d[1000][1000];
+int V, E;
  
-int dist[5][5];
- 
-void floyd() {
-    for (int k = 0; k < 4; k++) {
-        //가능한 모든 from, to 쌍에 대해 dist를 갱신한다.
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+
+void floyd() {    
+    // k = 중간정점
+    for (int k = 1; k <= V; k++) {
+        for (int i = 1; i <= V; i++) {
+            for (int j = 1; j <= V; j++) {
+                //if (i == k || j == k) continue;
+                if (d[i][j] > d[i][k] + d[k][j])
+                    d[i][j] = d[i][k] + d[k][j];
             }
         }
     }
 }
- 
- 
-void init() {
-    for (int i = 1; i <= 4; i++)
-        for (int j = 1; j <= 4; j++)
-            dist[i][j] = INF;
- 
-    for (int i = 1; i <= 4; i++) dist[i][i] = 0;
- 
-    dist[1][3] = -3;
-    dist[1][4] = 2;
- 
-    dist[2][1] = 3;
-    dist[2][3] = -1;
-    dist[2][4] = 7;
- 
-    dist[3][1] = 5;
-    dist[3][4] = 4;
- 
-    dist[4][2] = 3;
-}
+
  
 int main() {
-    init();
-    floyd();
+
+    //init 
+
+    cin >> V >> E;
+
+    for (int i = 1; i <= V; i++) {
+        for (int j = 1; j <= V; j++) {
+            d[i][j] = INF;
+        }
+    }
  
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            if (dist[i][j] == INF) printf("- ");
-            else printf("%d ", dist[i][j]);
+    for (int i = 1; i <= V; i++) 
+        d[i][i] = 0;
+
+
+    for (int i = 0; i < E; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+
+        d[u][v] = w;
+    }
+
+
+    floyd();
+
+    // print distance
+    for (int i = 1; i <= V; i++) {
+        for (int j = 1; j <= V; j++) {
+            if (d[i][j] == INF) printf("- ");
+            else printf("%d ", d[i][j]);
         }
         printf("\n");
     }
  
     return 0;
 }
+
 
 ```
 
