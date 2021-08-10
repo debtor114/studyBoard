@@ -20,9 +20,9 @@
 ```c++
 // parent[i] : i 노드의 부모 노드, parent[i] = i 인 경우 i는 루트 노드
 
-int parent[MAX_SIZE];
+int parent[100];
 
-for (int i=0; i < MAX_SIZE; i++)
+for (int i = 0; i < 100; i++)
   parent[i] = i;
 ```
 
@@ -96,20 +96,18 @@ find 를 통해 각각의 root 를 찾아준 후, 두 집합의 root 가 다른 
 
 
 
-트리의 높이를 기억하는 `rank` 라는 배열을 선언하고 초기화 해줍니다.
+
+
+트리의 높이를 기억하는 `rank` 라는 배열을 선언하고 초기화 해줍니다.  `union` 할 시 크기를 비교해주고 합쳐줄 경우에는 크기를 갱신해줍니다.
 
 ```c++
-int rank[MAX_SIZE];
+void ranking() {
+  int rank[100];
 
-for (int i=0; i < MAX_SIZE; i++)
-	rank[i] = 1;
-```
+  for (int i = 0; i < 100; i++)
+    rank[i] = 1;
+}
 
- 
-
-이제 `union` 할 시 크기를 비교해주고 합쳐줄 경우에는 크기를 갱신해주어야합니다.
-
-```c++
 void union(int x, int y){
   x = find(x);
   y = find(y);
@@ -134,24 +132,27 @@ void union(int x, int y){
 
 #### Weighted Union Find
 
-하지만 이럴 경우, `parent` 배열도, `size` 배열도 존재하여 메모리를 두 배로 사용하게 됩니다. 그래서 이를 개선하고자 `Weighted Union Find` 방법이 고안되었습니다. 이는 `find` 함수도 약간 바뀌므로 전체 코드로 알아보겠습니다.
+하지만 이럴 경우, `parent` 배열도, `size` 배열도 존재하여 메모리를 두 배로 사용하게 됩니다. 그래서 이를 개선하고자 `Weighted Union Find` 방법이 고안되었습니다. 
 
-우선 `parent` 배열은 음수일 경우, 부모노드로서 음수의 절대값은 size가 되고, 양수일 경우에는 부모노드를 가르키게 됩니다.
+ `parent` 배열이 음수일 경우, 음수의 절대값은 size가 되고, 양수일 경우에는 부모노드를 가리키게 됩니다.
 
-예를 들어서 `parent[2] = -3` 일 경우 2번 노드 밑에 두 개의 노드가 더 있어서 총 3개의 노드가 존재한다는 의미이고, `parent[3] = 5` 일 경우에는 3번 노드의 부모가 5번 노드라는 의미입니다.
+
+
+Ex) `parent[2] = -3` 일 경우 2번 노드 밑에 두 개의 노드가 더 있어서 총 3개의 노드가 존재한다는 의미이고, `parent[3] = 5` 일 경우에는 3번 노드의 부모가 5번 노드라는 의미입니다.
 
 
 
 ```c++
-int parent[MAX_SIZE];
+int parent[100];
 
-for (int i=0; i<MAX_SIZE; i++)
+for (int i = 0; i< 100; i++)
   parent[i] = -1;
 
 int find(int x){
   if (parent[x] < 0){
     return x;
   }
+  
   else{
     int y = find(parent[x]);
     parent[x] = y;

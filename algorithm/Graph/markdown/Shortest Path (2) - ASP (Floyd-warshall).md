@@ -88,10 +88,9 @@ w(i, j)를 i와 j간의 변의 가중치라면 shortestPath(i, j, k)를 다음�
 
 - 재귀적인 경우는 $ d_{ij}^{(k)} $ = min(shorestPath(i, j, k-1), shortestPath(i, k, k-1) + shortestPath(k, j, k-1))
 
-$ d\_{ij}^{(k)} = \left\{\begin{matrix}
- w\_{ij}& (k =0) \\\
- min(d\_{ij}^{(k-1)}, d\_{ik}^{(k-1)}+d_{kj}^{(k-1)})& (k \geq 1) \\\ 
-\end{matrix}\right. $
+$ d\_{ij}^{(k)} = \left\\{\begin{matrix} w\_{ij}& (k =0) \\\  min(d\_{ij}^{(k-1)}, d\_{ik}^{(k-1)}+d_{kj}^{(k-1)})& (k \geq 1) \\\  \end{matrix}\right. $
+
+
 
 
 
@@ -153,47 +152,47 @@ Floyd-Warshall (w, n) {
 
 #### 동작
 
-![image-20210730144122604](../images/image-20210730144122604.png)
+![image-20210730144122604](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730144122604.png?raw=true)
 
 
 
 
 
-![image-20210730144324607](../images/image-20210730144324607.png)
+![image-20210730144324607](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730144324607.png?raw=true)
 
 
 
-![image-20210730144431816](../images/image-20210730144431816.png)
+![image-20210730144431816](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730144431816.png?raw=true)
 
 
 
-![image-20210730144510949](../images/image-20210730144510949.png)
+![image-20210730144510949](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730144510949.png?raw=true)
 
 1번 정점에서 0번 정점을 중간정점으로 3번 정점으로 가니까 더 가중치가 낮은 간선이 되었으므로 업데이트 한다.
 
 
 
-![image-20210730144732576](../images/image-20210730144732576.png)
+![image-20210730144732576](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730144732576.png?raw=true)
 
 
 
-![image-20210730144805992](../images/image-20210730144805992.png)
+![image-20210730144805992](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730144805992.png?raw=true)
 
 3번에서 0번으로 가는 간선이 없으므로 아무일도 일어나지 않았다.
 
 
 
-![image-20210730144857788](../images/image-20210730144857788.png)
+![image-20210730144857788](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730144857788.png?raw=true)
 
 0번에서 1번으로 가는 간선이 없으므로 아무일도 일어나지 않았다.
 
 
 
-![image-20210730144936753](../images/image-20210730144936753.png)
+![image-20210730144936753](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730144936753.png?raw=true)
 
 
 
-![image-20210730145255980](../images/image-20210730145255980.png)
+![image-20210730145255980](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730145255980.png?raw=true)
 
 
 
@@ -201,39 +200,39 @@ Floyd-Warshall (w, n) {
 
 
 
-![image-20210730145412318](../images/image-20210730145412318.png)
+![image-20210730145412318](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730145412318.png?raw=true)
 
 
 
-![image-20210730145515182](../images/image-20210730145515182.png)
+![image-20210730145515182](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730145515182.png?raw=true)
 
 
 
-![image-20210730145809133](../images/image-20210730145809133.png)
+![image-20210730145809133](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730145809133.png?raw=true)
 
 아무일도 없었고요
 
 
 
-![image-20210730145844593](../images/image-20210730145844593.png)
+![image-20210730145844593](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730145844593.png?raw=true)
 
 
 
-![image-20210730150103426](../images/image-20210730150103426.png)
+![image-20210730150103426](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730150103426.png?raw=true)
 
 
 
-![image-20210730150332746](../images/image-20210730150332746.png)
+![image-20210730150332746](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730150332746.png?raw=true)
 
-![image-20210730150357665](../images/image-20210730150357665.png)
+![image-20210730150357665](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730150357665.png?raw=true)
 
 3번에서 2번으로 가는 간선이 없으므로 아무일도 일어나지 않았다.
 
 
 
-![image-20210730150530803](../images/image-20210730150530803.png)
+![image-20210730150530803](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730150530803.png?raw=true)
 
-![image-20210730150643803](../images/image-20210730150643803.png)
+![image-20210730150643803](https://github.com/doooooooong/studyBoard/blob/master/algorithm/Graph/images/image-20210730150643803.png?raw=true)
 
 
 
@@ -362,23 +361,12 @@ int main() {
 
 
 $ D^{(k)} $ 대신 $ T^{(k)} = (t_{ij}^{(k)}) $ 를 사용한다.
-$$
-t_{ij}^{(0)} = \left\{\begin{matrix} 
-0 & i\not= j \ and \ (i, j) \notin E \\
-1 & i=j\ or \ (i, j) \in E
-\end {matrix}\right. 
+
+$ t_{ij}^{(0)} = \left\\{\begin{matrix} 0 & i\not= j \ and \ (i, j) \notin E \\\ 1 & i=j\ or \ (i, j) \in E \end {matrix}\right. \\\ t\_{ij}^{(k)} = \left\\{\begin{matrix} 1 \ \ \ (if \ there \ is \ a \ path \ from \ i \ to \ j \ with \ all \ intermediate \ vertices \ in \ \{1, 2,3, ..., k\}) \\\ = (t\_{ij}^{k-1} = 1) \ or (t\_{ik}^{(k-1)} = 1 \ and \ t\_{kj}^{k-1}=1) \\\ 0 \ (otherwise) \end {matrix}\right. $
 
 
 
-\\ t_{ij}^{(k)} = \left\{\begin{matrix} 
-1 \ \ \ (if \ there \ is \ a \ path \ from \ i \ to \ j \ with \ all \ intermediate \ vertices \ in \ \{1, 2,3, ..., k\}) \\
-= (t_{ij}^{k-1} = 1) \ or (t_{ik}^{(k-1)} = 1 \ and \  t_{kj}^{k-1}=1)
-\\
-0 \ (otherwise)
 
-
-\end {matrix}\right.
-$$
 
 
 ```pseudocode
