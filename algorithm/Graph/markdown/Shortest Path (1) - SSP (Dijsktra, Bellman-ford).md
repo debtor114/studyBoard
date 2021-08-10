@@ -244,7 +244,7 @@ bool BellmanFord() {
          int v = get<1>(Edge[i]);
          int w = get<2>(Edge[i]);
 
-         if (d[v] > d[u] + w) 
+         if (d[u] != INF && d[v] > d[u] + w) 
             return false;
     }
     return true;
@@ -318,15 +318,14 @@ DAG-SHORTEST-PATHS(V, E, w, s)
 
 #### 설계
 
-```
-두 개의 정점 세트가 있습니다.
-– S = 최단 경로에 포함된 정점.
-– Q = 우선순위 큐 = V – S.
+두 개의 집합을 준비한다.
 
-그래프 G=(V,E)의 경우 최단 경로가 알려진 정점 집합 S를 유지합니다.
+- S = 최단 경로에 포함된 정점.
+- Q = 우선순위 큐 = V – S.
 
-추정된 최소 최단 경로로 정점 u(u∈V-S)를 반복적으로 선택하고 u를 S에 추가하고 u를 떠나는 모든 가장자리를 완화합니다.
-```
+
+
+최단 경로로 정점 u(u ∈ V-S)를 반복적으로 선택하고 u를 S에 추가하고 u에 인접한 모든 정점에 대하여 rexalation합니다.
 
 
 
@@ -345,7 +344,7 @@ for (int i = 0; i < V; i++)
 	Q.push(V[i]);
 	
 while (!Q.empty())
-	u = EXTRACT-MIN (Q);
+	u = EXTRACT-MIN(Q);
 	S.insert(u);
 	for each vertext v in adj[u]
 		Relaxation(u, v, w)
@@ -442,6 +441,92 @@ s->t로 가는 최단경로 찾기
 #### 코드
 
 ```c++
+#include <iostream>
+#include <queue>
+#include <vector>
+#include <algorithm>
+#include <utility>
+#include <set>
+#include <stack>
+
+using namespace std;
+
+#define PAIR pair<int, int>
+
+int d[1000], p[1000];
+
+vector <PAIR> adj_list[1000];
+
+
+void dijsktra(int V, int E, int start) {
+
+    for (int i = 1; i <= V; i++) {
+        d[i] = 9999999;
+        p[i] = -1;
+    }
+
+    d[start] = 0;
+    p[start] = 0;
+
+    set <int> S;
+    priority_queue <PAIR, vector<PAIR>, greater<PAIR> > Q;
+
+    for (int i = 1; i <= V; i++) {
+        Q.push(make_pair(d[i], i)); 
+    }
+
+    while (!Q.empty()) {
+        int u = Q.top().second;
+        Q.pop();
+        S.insert(u);
+    
+        for (int i = 0; i < adj_list[u].size(); i++) {
+            int v = adj_list[u][i].first;
+            int w = adj_list[u][i].second;
+
+            if (d[v] > d[u] + w) {
+                d[v] = d[u] + w;
+                p[v] = u;
+                Q.push(make_pair(d[v], v));
+            }
+        }
+    }
+}
+
+int main() {
+    int V, E, src, dest;
+    cin >> V >> E >> src >> dest;
+    for (int i = 0; i < E; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+
+        adj_list[u].push_back(make_pair(v, w));
+    }
+
+    dijsktra(V, E, src);
+
+    // 각 정점까지의 최단거리
+    for (int i = 1; i <= V; i++) {
+        cout << "d[" << i << "]: " << d[i] << endl;
+    }
+
+    // 최단경로 출력
+    stack <int> sp;
+    while (1) {
+        sp.push(dest);
+        dest = p[dest];
+        if (dest == 0) break;
+    }
+
+    cout << "shortest path: ";
+    while (!sp.empty()) {
+        cout << sp.top() << " ";
+        sp.pop();
+    }
+
+    return 0;
+  
+}
 ```
 
 

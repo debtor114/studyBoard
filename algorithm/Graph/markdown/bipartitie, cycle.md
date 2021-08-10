@@ -171,34 +171,3 @@ bool bipartitleVerify(graph g) {
 ```
 
 
-
-
-
-
-
-
-
-## P-NP problem
-
-- Graph coloring  - no one knows
-
-- Euler tour - typical
-
-- Hamiliton cycle - intractable, classic NP-complete problem
-
-- Graph isomorphism - no one knows
-
-- lay out a graph in the plane without crossing edges - hire an expert, 
-
-  linear time ifs-based planarity alogrithm discovered by Tarjan in 1970s (too complicated for most practitioners)
-
-
-
-how difficult?
-
-- any programmer could do it
-- typical diligent alogrithms student could do it
-- hire an expert
-- intractable.
-- no one knows.
-- Impossible
