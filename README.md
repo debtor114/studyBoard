@@ -4,3 +4,6 @@
 
 - CS study
 - Algorithm study
+- Language
+- Devops
+- server programming
