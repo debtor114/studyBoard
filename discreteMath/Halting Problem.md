@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=92WHN-pAFCs
 
 산술식을 받아서 결과값을 출력하는 기계 A가 있다고 가정해보자. 이 기계 A는 항상 옳은 답을 출력한다.
 
-<img src="images/image-20210812013625833.png" alt="image-20210812013625833" style="zoom:50%;" /> 
+<img src="https://github.com/doooooooong/studyBoard/blob/master/discreteMath/images/image-20210812013625833.png?raw=true" alt="image-20210812013625833" style="zoom:50%;" />
 
 
 
@@ -20,7 +20,7 @@ https://www.youtube.com/watch?v=92WHN-pAFCs
 
 또 체스를 두는 기계 C가 있다고 가정해보자. 이 기계는 현재의 체스판 상태를 입력을 받아서 다음 수를 출력한다. 이 기계 C는 체스를 너무 잘해서 항상 이기는 수만 둔다.
 
-<img src="images/image-20210812013716714.png" alt="image-20210812013716714" style="zoom:50%;" /> 
+<img src="https://github.com/doooooooong/studyBoard/blob/master/discreteMath/images/image-20210812013716714.png?raw=true" alt="image-20210812013716714" style="zoom:50%;" />
 
 
 
@@ -32,7 +32,7 @@ https://www.youtube.com/watch?v=92WHN-pAFCs
 
  위에서 살펴본 **기계 A의 설계도**와 "**3+5**"라는 입력을 받으면 A기계는 정수의 합을 출력할 수 있으므로 기계 H는 잘 작동한다 라는 결과값을 출력한다. 마찬가지로 기계 H도 항상 옳은 답만을 출력한다.
 
-<img src="images/image-20210812013845159.png" alt="image-20210812013845159" style="zoom:50%;" /> 
+<img src="https://github.com/doooooooong/studyBoard/blob/master/discreteMath/images/image-20210812013845159.png?raw=true" alt="image-20210812013845159" style="zoom:50%;" />
 
 
 
@@ -40,7 +40,7 @@ https://www.youtube.com/watch?v=92WHN-pAFCs
 
 만약 기계 C의 설계도와 "3+5"라는 입력을 기계 H에게 주면, 잘 작동하지 않는다라는 결과를 출력할 것이다.
 
-<img src="images/image-20210812013942622.png" alt="image-20210812013942622" style="zoom:50%;" /> 
+<img src="https://github.com/doooooooong/studyBoard/blob/master/discreteMath/images/image-20210812013942622.png?raw=true" alt="image-20210812013942622" style="zoom:50%;" />
 
 정지문제는 이런 **기계 H를 만드는 것이 가능한 것인가?** 를 묻는 것이라고 할 수 있다.
 
@@ -62,13 +62,13 @@ https://www.youtube.com/watch?v=92WHN-pAFCs
 
 새로운 기계 P가 있다. 이 기계는 하나의 입력을 받으며 입력을 받은 것을 두 개의 동일한 것으로 출력해준다.
 
-<img src="images/image-20210812014218563.png" alt="image-20210812014218563" style="zoom:50%;" /> 
+<img src="https://github.com/doooooooong/studyBoard/blob/master/discreteMath/images/image-20210812014218563.png?raw=true" alt="image-20210812014218563" style="zoom:50%;" />
 
 
 
 또 새로운 기계 N이 있다. 이 기계는 **잘 작동한다 / 잘 작동하지 않는다** 두가지 상태를 입력으로 받으며, 입력이 **잘 작동한다**로 들어왔을 때, 결과는 잘 작동하지 않게 되며, 입력이 **잘 작동하지 않는다**로 들어왔을 때  잘작동했습니다. 라는 사인의 웃는 얼굴을 출력한다.
 
-![image-20210812014559975](images/image-20210812014559975.png)
+![image-20210812014559975](https://github.com/doooooooong/studyBoard/blob/master/discreteMath/images/image-20210812014559975.png?raw=true)
 
 
 
@@ -76,7 +76,7 @@ https://www.youtube.com/watch?v=92WHN-pAFCs
 
 이 기계들을 아래와 같이 설치하고 이를 묶어서 X 기계라고 하자.
 
-![image-20210812015419022](images/image-20210812015419022.png) 
+![image-20210812015419022](https://github.com/doooooooong/studyBoard/blob/master/discreteMath/images/image-20210812015419022.png?raw=true) 
 
 
 
@@ -90,7 +90,7 @@ https://www.youtube.com/watch?v=92WHN-pAFCs
 
 **첫 번째**는 X안의 H기계가 X가 잘 작동한다고 결과를 낸 경우이다.
 
-<img src="images/image-20210812015758362.png" alt="image-20210812015758362" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/discreteMath/images/image-20210812015758362.png?raw=true" alt="image-20210812015758362" style="zoom:50%;" />
 
 H는 X가 잘 작동할 것이라고 판별했지만 실제로 X는 오류가 나고 기계가 덜덜덜 떨린다.
 
@@ -98,7 +98,7 @@ H는 X가 잘 작동할 것이라고 판별했지만 실제로 X는 오류가 �
 
 두번째 경우는 X안의 H기계가 X가 오류를 발생시킬 것이라고 결과를 낸 경우이다.
 
-<img src="images/image-20210812015842261.png" alt="image-20210812015842261" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/discreteMath/images/image-20210812015842261.png?raw=true" alt="image-20210812015842261" style="zoom:50%;" />
 
 하지만 기계 X는 잘 작동하여 :) 기호를 내놓았다.
 

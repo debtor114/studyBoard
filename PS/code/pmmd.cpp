@@ -4,8 +4,26 @@
 
 using namespace std;
 
+string addition (string a, string b);
+string substraction (string a, string b);
+
+
 string addition (string a, string b) {
   string result;
+
+  int flag_a = 0, flag_b = 0;
+
+  if (a[0] == '-') flag_a = 1;
+  if (b[0] == '-') flag_b = 1;
+
+
+  if (flag_a && !flag_b) return substraction(b, a.substr(1));
+  if (!flag_a && flag_b) return substraction(a, b.substr(1));
+
+  if (flag_a && flag_b) {
+      a = a.substr(1);
+      b = b.substr(1);
+  }
   
   int len_a = a.length();
   int len_b = b.length();
@@ -28,16 +46,35 @@ string addition (string a, string b) {
       result =  char(sum + '0') + result;
   }
 
+    if (carry > 0) result = char(carry +'0') + result;
+
     while (result.length() > 1 && result[0] == '0') {
         result = result.substr(1);
     }
-  if (carry > 0) result += carry +'0';
+  
+  if (flag_a && flag_b) result = '-' + result;
 
   return result;
 }
 
 string substraction (string a, string b) {
     string result;
+
+    int flag_a = 0, flag_b = 0;
+
+
+  if (a[0] == '-') flag_a = 1;
+  if (b[0] == '-') flag_b = 1;
+
+  
+  if (flag_a && !flag_b) return addition(a, '-' + b);
+  if (!flag_a && flag_b) return addition(a, b.substr(1));
+
+    if (flag_a && flag_b) {
+      a = a.substr(1);
+      b = b.substr(1);
+  }
+
 
     int len_a = a.length();
     int len_b = b.length();
@@ -77,7 +114,8 @@ string substraction (string a, string b) {
         result = result.substr(1);
     }
 
-    if (flag) result =  "-" + result;
+    if (!(flag_a && flag_b) && (flag)) result =  "-" + result;
+    if ((flag_a && flag_b) && !(flag)) result =  "-" + result;
 
     return result;
 }
@@ -109,9 +147,6 @@ int main() {
     cin >> s1 >> s2;
 
     cout << addition(s1, s2) << endl;
-    cout << substraction(s1, s2) << endl;
-    cout << modulo(s1, s2) << endl;
-    cout << power(s1, s2) << endl;
 
     return 0;
 }
