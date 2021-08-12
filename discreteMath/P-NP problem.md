@@ -77,7 +77,7 @@ NP 문제는 **결정 문제들 중에서 적어도 검산은 쉽게 할 수 있
 
 ##### 해밀턴 경로문제
 
-<img src="images/1200px-Hamiltonian_path.svg.png" alt="해밀턴 경로 - 위키백과, 우리 모두의 백과사전" style="zoom:25%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/discreteMath/images/1200px-Hamiltonian_path.svg.png?raw=true" alt="해밀턴 경로 - 위키백과, 우리 모두의 백과사전" style="zoom:25%;" />
 
 어떤 그래프가 주어졌을 때, "그래프의 모든 점을 정확하게 한 번씩만 지나는 경로가 존재하는가?" 
 
@@ -101,7 +101,7 @@ NP 문제는 **결정 문제들 중에서 적어도 검산은 쉽게 할 수 있
 
 
 
-<img src="images/p_np.png" alt="diagram" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/discreteMath/images/p_np.png?raw=true" alt="diagram" style="zoom:50%;" />
 
 
 
