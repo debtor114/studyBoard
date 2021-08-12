@@ -12,7 +12,7 @@
 
 #### 동작
 
-<img src="../images/image-20210812180440751.png" alt="image-20210812180440751" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210812180440751.png?raw=true" alt="image-20210812180440751" style="zoom:50%;" />
 
  **정렬된 배열**에서 이진 탐색(Binary Search) 알고리즘을 사용해 보자
 
@@ -24,7 +24,7 @@
 
 i. 데이터 집합의 중앙값를 선택한다.
 
-<img src="../images/image-20210812180510985.png" alt="image-20210812180510985" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210812180510985.png?raw=true" alt="image-20210812180510985" style="zoom:50%;" />
 
 
 
@@ -39,15 +39,15 @@ ii. 중앙 요소의 값과 찾으려는 값을 서로 비교한다.
 
 이 경우는 찾으려는 값(13) > 중앙값(9) 이므로 오른편에서 중앙값을 다시 선택한다.
 
-<img src="../images/image-20210812180859090.png" alt="image-20210812180859090" style="zoom: 43%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210812180859090.png?raw=true" alt="image-20210812180859090" style="zoom: 43%;" />
 
-<img src="../images/image-20210812180755666.png" alt="image-20210812180755666" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210812180755666.png?raw=true" alt="image-20210812180755666" style="zoom:50%;" />
 
 
 
 그리고 다시 이진 탐색(2번 과정)을 반복한다. 위의 경우에는 찾으려는 값(13) < 중앙값(14)이므로 중앙값의 왼편에서 중앙값을 다시 선택한다.
 
-<img src="../images/image-20210812180941974.png" alt="image-20210812180941974" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210812180941974.png?raw=true" alt="image-20210812180941974" style="zoom:50%;" />
 
 
 
@@ -63,7 +63,7 @@ iii. 찾으려는 값(13) = 중앙값(13) 이므로 탐색을 끝낸다.
 
 만약 12를 탐색하려고 했다고 가정하자
 
-<img src="../images/image-20210812181941224.png" alt="image-20210812181941224" style="zoom:50%;" />
+<img src="https://github.com/doooooooong/studyBoard/blob/master/algorithm/Search/images/image-20210812181941224.png?raw=true" alt="image-20210812181941224" style="zoom:50%;" />
 
 남은 배열이 13 하나 인데 찾으려는 값(12) $\not=$ 중앙값(13)인 경우이다.
 
