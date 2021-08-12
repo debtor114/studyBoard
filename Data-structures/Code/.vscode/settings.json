@@ -1,5 +1,10 @@
 {
     "files.associations": {
-        "unordered_map": "c"
+        "unordered_map": "c",
+        "iosfwd": "cpp",
+        "iostream": "cpp",
+        "string": "cpp",
+        "locale": "cpp",
+        "ostream": "cpp"
     }
 }
