@@ -1,10 +1,18 @@
 ## 싸이클 찾기 
 
+
+
+**Q. 사이클을 찾는다는 것은?**
+
+- 그래프 내에 사이클이 있는가? 
+- 있다면 총 몇 개 존재하는가 ?
+- 사이클에 포함된 노드의 개수는 몇 개인가? 
+
+
+
+
+
 ### 무향 vs 유향 그래프
-
-
-
-
 
 사이클은 첫 번째 정점과 마지막 정점이 동일한 경로입니다.
 
@@ -130,23 +138,9 @@ void testGraph(graph g) {
 
 
 
+### 무방향 그래프 사이클 찾기
 
 
-### [1] 그래프 조건, 트리 조건
-
-사이클에 대해 이야기하기 전에 2가지 사실을 짚고 넘어갑니다.
-
-#### 1. 정점 n개, 간선 n-1개인 그래프는 트리이다.
-
-그렇지 않습니다. 하지만 역인 트리이면 정점 n개 간선 n-1개를 갖는다는 맞습니다.
-
-#### 2. 정점 n개, 간선 n개인 그래프는 정확히 한개의 사이클을 갖는다.
-
-맞습니다. 간선의 개수가 정점의 개수와 같다면 하나의 사이클이 존재하게 됩니다.
-
-그렇다면 사이클을 어떻게 찾을 수 있을까요?
-
-### [2] 사이클을 찾기 위해 필요한 2가지
 
 #### 1. DFS로 그래프를 탐색하고나서 탐색 경로를 살펴보면 트리가 된다.
 
@@ -155,6 +149,8 @@ void testGraph(graph g) {
 <DFS 경로를 표시한 그래프>
 
 주어진 그래프를 딱보면 사이클이 있는 그래프네요. 이 그래프를 정점 1을 루트로 DFS 탐색을 하고 탐색한 경로를 빨간색으로 표시한것이 아래 이미지입니다. 빨간색 이미지를 보면 어떻나요? 트리를 이루고 있죠? 트리의 정의는 무엇인가요? 임의의 두 노드를 잇는 경로는 유일해야하죠. DFS는 어떤가요? 같은 노드를 여러번 방문하나요? 그렇지 않죠 그래서 DFS경로를 표시하면 위와 같이 트리가 됩니다.
+
+
 
 #### 2. 트리는 어디서부터 왔는지를 이용하면 visited배열 없이 DFS 탐색이 가능하다.
 
@@ -223,11 +219,7 @@ dfs(1,1);
 
 ## 유니온 파인드로 사이클 찾기
 
-**Q. 사이클을 찾는다는 것은?**
 
-사이클을 검출(detect) 한다는 것은 그래프내에 사이클이 있는가? 있다면 총 몇 개 존재하는가 ? 그리고 사이클에 포함된 노드의 개수는 몇 개인가? 등을 알아내는 것이다.
-
-어떠한 이유로 그래프 자료구조를 이용해 다양한 문제를 풀다보면 그래프내 사이클을 찾는 알고리즘들이 필요하게 된다.
 
 예를들어 최소신장트리 - MST를 생성하려면 그래프내 사이클이 없어야 하는데 MST를 생성하는 알고리즘 중 하나인 [크러스컬(Kruskal) 알고리즘](https://jackpot53.tistory.com/73) 에서도 필요하다.
 
@@ -237,15 +229,13 @@ dfs(1,1);
 
  
 
-**Q. [서로수집합(Disjoint Set) - 합집합-찾기(union–find)](https://jackpot53.tistory.com/91) 으로 사이클 검출이 가능하다고 하던데 ?**
-
-Disjoin Set에 대해서 모르면 우선 [서로수집합(Disjoint Set) - 합집합-찾기(union–find)](https://jackpot53.tistory.com/91)를 반드시 선행 학습해야 한다.
+**Q. union find으로 사이클 검출이 가능하다고 하던데 ?**
 
 서로수 집합의 원소를 정점(or 노드)라고 하면 같은 집합(subgraph)에 포함되어 있는 정점들끼리는 이미 에지로 연결된 것들이고 다른 집합(subgraph)에 있는 정점과는 서로 연결되어 있지 않다는 것을 기반으로 한다. 
 
  
 
-***Union-Find Algorithm\*** 은 그래프내 셀프루프(self-loop : 자기자신을 가리키는 간선)을 포함하면 안되고 **무방향그래프에서 사이클을 찾는데 유용**하다. 
+Union-Find Algorithm 은 그래프내 셀프루프(self-loop : 자기자신을 가리키는 간선)을 포함하면 안되고 **무방향그래프에서 사이클을 찾는데 유용**하다. 
 
 그림 2와 같은 그래프가 있을때 **0 → 1** **→ 3** **→ 2** **→ 0** 으로 순환되는 사이클이 1개 존재하는데 이것을 Union-Find Algorithm으로 검출하는 것을 예로 들어보자. 
 
@@ -259,50 +249,58 @@ Disjoin Set에 대해서 모르면 우선 [서로수집합(Disjoint Set) - 합�
 
  
 
-그림2는 S1 **∪NION** S0 = {0, 1} 을 하고 0을 부모로 한다.
+그림2는 S1 U S0 = {0, 1} 을 하고 0을 부모로 한다.
 
  
 
 
 
-![img](https://blog.kakaocdn.net/dn/dNkTaq/btqwAk8APpU/LoQ7JUZIc2dRkZVsvkm5e1/img.png)그림2 S1 ∪NION S0 = {0, 1} 결과
+![img](https://blog.kakaocdn.net/dn/dNkTaq/btqwAk8APpU/LoQ7JUZIc2dRkZVsvkm5e1/img.png)그림2 S1 U S0 = {0, 1} 결과
 
 
 
 **disjoint set 에서 UNION을 하려면 서로 연결하려는 정점의 루트노드가 서로 달라야 한다**
-여기서 S1, S0 는 서로 루트노드가 다르기 때문에 UNION이 가능하다. ([서로수집합(Disjoint Set) - 합집합-찾기(union–find)](https://jackpot53.tistory.com/91) 코드 참고)
+여기서 S1, S0 는 서로 루트노드가 다르기 때문에 UNION이 가능하다. 
 
-| 123456789 | public void union(int p, int q) {    int rootP = find(p);    int rootQ = find(q);    if (rootP == rootQ) return;     parent[rootQ] = rootP;     count--;  } |
-| --------- | ------------------------------------------------------------ |
-|           |                                                              |
+```c++
+ void union(int p, int q) {
+   int rootP = find(p);
+   int rootQ = find(q);
+   if (rootP == rootQ) return;
+   parent[rootQ] = rootP;
+   count--;
+ }
+```
+
+
 
  
 
-그림3는 S2 **∪NION** S0 = {0, 1, 2} 을 하고 0을 부모로 한다.
+그림3는 S2 **U** S0 = {0, 1, 2} 을 하고 0을 부모로 한다.
 
  
 
 
 
-![img](https://blog.kakaocdn.net/dn/E8xIJ/btqwAHI1klx/JDgGQsNqz7RCxpHPPFstg0/img.png)그림3 S2 ∪NION S0 = {0, 1, 2}
+![img](https://blog.kakaocdn.net/dn/E8xIJ/btqwAHI1klx/JDgGQsNqz7RCxpHPPFstg0/img.png)그림3 S2 U S0 = {0, 1, 2}
 
 
 
-그림4는 S3 **∪NION** S0 = {0, 1, 2, 3 } 을 하고 1을 부모로 한다.
+그림4는 S3 U S0 = {0, 1, 2, 3 } 을 하고 1을 부모로 한다.
 
 
 
-![img](https://blog.kakaocdn.net/dn/xHvej/btqwyCCl7Mj/KQfleaU4FKxrMKPmXn3XlK/img.png)그림4 S3 ∪NION S0 = {0, 1, 2}
+![img](https://blog.kakaocdn.net/dn/xHvej/btqwyCCl7Mj/KQfleaU4FKxrMKPmXn3XlK/img.png)그림4 S3 U S0 = {0, 1, 2}
 
 
 
-그림5는 S4 **∪NION** S0 = {0, 1, 2, 3 } 을 하고 3을 부모로 하였다.
+그림5는 S4 **U** S0 = {0, 1, 2, 3 } 을 하고 3을 부모로 하였다.
 
 이제 모든 정점에 에지가 연결되었고 사이클이 없는 스패닝트리(spanning tree)가 완성되었다. 
 
 
 
-![img](https://blog.kakaocdn.net/dn/bxNcGQ/btqwyPO1GnN/yot1LOXsbFf6OcUdrEJn2k/img.png)그림5. 그림4 S4 ∪NION S0 = {0, 1, 2, 3, 4}
+![img](https://blog.kakaocdn.net/dn/bxNcGQ/btqwyPO1GnN/yot1LOXsbFf6OcUdrEJn2k/img.png)그림5. 그림4 S4 U S0 = {0, 1, 2, 3, 4}
 
 
 
@@ -310,7 +308,7 @@ Disjoin Set에 대해서 모르면 우선 [서로수집합(Disjoint Set) - 합�
 
 그림6은 3 -> 2를 에지를 연결하려 시도하고 있다.
 
-***Union-Find Algorithm\*** 을 이용하여 3과, 2의 루트노드를 찾아볼것이다. 
+Union-Find Algorithm 을 이용하여 3과, 2의 루트노드를 찾아볼것이다. 
 
 3, 2는 루트노드 0의 자식노드 또는 손자노드이기 때문에 같은 집합에 있다.
 **disjoint set 에서 UNION을 하려면 서로 연결하려는 정점의 루트노드가 서로 달라야 한다는 규칙을 어기게된고**
@@ -326,6 +324,10 @@ Disjoin Set에 대해서 모르면 우선 [서로수집합(Disjoint Set) - 합�
 
 
  
+
+
+
+
 
 ## SCC로 사이클 찾기
 
