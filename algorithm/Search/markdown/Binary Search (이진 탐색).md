@@ -108,14 +108,14 @@ int BinarySearch(int *arr, int length, int target) {
 **재귀를 사용한 구현**
 
 ```c++
-bool BinarySearch(int *arr, int start, int end, int, target) {
-    if (start > end) return false;
-    
-    int mid = (start + end) / 2;
-    
-    if (arr[mid] == target) return true;
-    else if (arr[mid] > target) return BinarySearch(arr, start, mid-1, target);
-    else return BinarySearch(arr, mid + 1, end, target);
+bool bsearch(int *arr, int start, int end, int target) {
+    int mid = (start+end) / 2;
+
+    if (target < v[start] || target > v[end]) return false;
+
+    if (target < v[mid]) return bsearch(arr, start, mid, target);
+    else if (target > v[mid]) return bsearch(arr, mid+1, end, target);
+    else return true;
 }
 ```
 
