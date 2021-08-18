@@ -6,13 +6,17 @@
 
 1. 제어판 - 프로그램 - windows 기능 켜기/끄기 - Linux용 Windows 하위 시스템 체크 후 재부팅
 
+<img src="C:\Users\KDI\AppData\Roaming\Typora\typora-user-images\image-20201018175641972.png" alt="image-20201018175641972" style="zoom:50%;" /> 
 
+<img src="C:\Users\KDI\AppData\Roaming\Typora\typora-user-images\image-20201018175756720.png" alt="image-20201018175756720" style="zoom:50%;" /> 
+
+<img src="C:\Users\KDI\AppData\Roaming\Typora\typora-user-images\image-20201018175850770.png" alt="image-20201018175850770" style="zoom:67%;" /> 
 
 
 
 2. Microsoft Store 앱을 켠후 Ubuntu 다운로드
 
-
+<img src="C:\Users\KDI\AppData\Roaming\Typora\typora-user-images\image-20201018180014536.png" alt="image-20201018180014536" style="zoom:50%;" /> 
 
 실행 후 root username과 password를 설정
 
