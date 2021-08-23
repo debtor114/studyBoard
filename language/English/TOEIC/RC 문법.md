@@ -62,7 +62,7 @@ There ____ a few changes to the process of evaluating employee performance in an
 
 #### 3. 능동태/수동태
 
-수동태 뒤에는 목적어가 올 수 없다.
+**수동태 뒤에는 목적어가 올 수 없다.** (이거 진짜 개중요함, 예외도 있음)
 
 - 능동태: She installed the software.
 
@@ -201,7 +201,7 @@ The marketing department _____ to spend a lot of money to make sure that the lat
 
 
 
-소유격은 명사 앞에서 형용사 역할을 한다.
+소유격은 명사 앞에서 형용사 역할을 한다. 또한 인칭대명사는 수식을 받을 수 없다.
 
 ```
 Students can cancel (their / they) classes by May 7.
@@ -378,7 +378,7 @@ O O O O : one
 
 ##### 2. another
 
-- 단독으로 사용되는 명사 역살
+- 단독으로 사용되는 명사 역할
 
 Ex) After the success of her first store, Ms. Fiesher opened another.
 
@@ -648,7 +648,470 @@ _____ the employees required during the strike was a promised salary raise and a
 
 
 
-#### 16. 능동태 / 수동태
+#### 16. 능동태 / 수동태 (2)
+
+수동태의 뒤에는 목적어가 올 수 없다고 배웠지만 올 수 있는 경우도 있다.
+
+
+
+- 목적어가 오는 수동태 : give, offer, award, grant , pay, send (4형식 동사)
+
+```
+Ms. Scott gives clients business advice.
+
+=> Clients are given advice by Ms.Scott
+```
+
+
+
+- 보어가 오는 수동태: consider, deem, call, make, leave, keep , find, appoint, elect (5형식 동사)
+
+```
+The board appointed Mr.Kim manager.
+
+=> Mr.Kim was appointed manager by the board
+```
+
+
+
+- 수동태(be + p.p)의 짝 표현
+
+주로 be + p.p + by ~ 로 사용하지만 by가 아닌 경우가 있다.
+
+
+
+**For**
+
+| be known for    | ~로 유명하다. |
+| --------------- | ------------- |
+| be renowned for | ~로 유명하다. |
+| be used for     | ~에 사용되다. |
+
+
+
+**with**
+
+| Be satisfied with (V) | ~에 만족하다.    |
+| --------------------- | ---------------- |
+| be please with (V)    | ~에 기뻐하다.    |
+| be associated with    | ~와 관련되다.    |
+| be concerned with     | ~와 관련되다     |
+| be equipped with (V)  | ~를 갖추고 있다. |
+| be faced with         | ~에 직면하다.    |
+
+
+
+**to**
+
+| be dedicated to | ~에 전념하다. |
+| --------------- | ------------- |
+| be devoted to   | ~에 전념하다. |
+| Be committed to | ~에 전념하다. |
+| Be exposed to   | ~에 노출되다. |
+| be related to   | ~와 관련되다  |
+| be assigned to  | ~에 배정되다  |
+
+
+
+**in**
+
+| be interested in | ~에 흥미가 있다. |
+| ---------------- | ---------------- |
+| be engaged in    | ~에 종사하다.    |
+| be involved in   | ~에 관련되다     |
+| be absorbed in   | ~에 몰두하다     |
+
+
+
+```
+Function rooms at the convention center are fully equipped ____ the state-of-the-art equipment.  (with)
+```
+
+
+
+
+
+##### 문제
+
+```
+Only if you ____ authorization from your immediate supervisior, you can access client files.
+
+(A) have granted (B) are granted (C) was granted (D) granted
+```
+
+
+
+##### 해설
+
+grant는 4형식 동사이기 때문에 뒤에 목적어가 올 수 있으므로 능동/수동태로 문제를 풀 수 없다. 해석을 해보면 권한을 받는 것이기 때문에 능동의 의미인 A, D는 소거되고 수일치가 맞지않는 C도 소거한다. 따라서 **B가 정답**
+
+
+
+
+
+
+
+#### 17. 수일치
+
+most of, all of, some of, half of 뒤에 단수명사가 오면 단수동사, 복수명사가 오면 복수동사가 와야한다.
+
+````
+Half of the managers don't agree.
+Half of the country was polluted.
+````
+
+
+
+##### 문제
+
+```
+Some of the information in this report ____ with the data that Ms.Collins reviewed
+
+(A) conflicting (B) confliction (C) conflicts (D) conflict
+```
+
+
+
+##### 해설
+
+빈칸은 동사자리고 some of 뒤에 오는 명사 information이 단수이기 때문에 **C가 정답**
+
+
+
+ 
+
+
+
+#### 18. 제안/요청/의무와 관련된 that절
+
+- That절 안에 should를 주로 사용하는 동사들이 있다.
+  - request, advised 등
+- request, advise의 목적어 that이 이끄는 절에는 **조동사 should가 생략되어 있기 때문에 동사자리에 동사원형**만 사용될 수 있다.
+
+```
+Mr.Grant advised that the store (should) change its interior design.
+```
+
+
+
+##### 문제
+
+```
+The marketing director has requested that addtional resources __ to the new campaign.
+
+
+(A) devotes (B) be devoted (C) devoting (D) were devoted
+```
+
+
+
+##### 해설
+
+빈칸은 동사자리이고 뒤에 목적어가 없기 때문에 수동태가 와야한다. 또한 제안, 요청, 의무와 관련된 request의 목적어절이기 때문에 should가 생략되어 있으므로 동사원형이 와야하므로 **B가 정답**
+
+
+
+
+
+#### 19. had + pp
+
+```
+|----------|-----------|----------|
+더과거			과거					현재				미래
+
+<---------> <---------->
+	과거 완료			현재 완료
+```
+
+- 현재 완료: 어떤일이 과거에서 현재까지 이어질 때
+
+- 과거 완료: ~했다, 어떤 과거보다 더 이전의 과거에 벌어진 일을 표현
+
+```
+Before I arrived at the stadium, the game had started.
+```
+
+
+
+##### 문제
+
+```
+Vintage Pasta House ____ its delivery charges becuase the cost of fuel recently rose. 
+
+(A) have increased (B) had increased (C) was increased (D) increased
+```
+
+
+
+##### 해설
+
+수일치가 안맞기 때문에 A는 소거 또한 빈칸뒤에 목적어가 왔기 때문에 수동태인 C도 소거
+
+마지막으로 연료비용이 상승했기 때문에 레스토랑이 배송요금을 상승시켰다.  따라서 연료비용이 상승한 것이 더 먼저이기 때문에 과거완료를 사용할 수 없다. **D가 정답**
+
+
+
+
+
+#### 20. 복합명사
+
+대부분 명사앞에 빈칸이 있으면 형용사가 들어와서 명사를 수식해준다.
+
+```
+Mr.Kim explain _____ plans (specific / specifically)
+```
+
+
+
+하지만 복합명사(명사+명사)의 가능성에 주의해야한다.
+
+```
+Please read the ______ description carefully. (productive / product)
+```
+
+
+
+해석을 했을 때 자연스러운지를 파악해서 답을 골라야 한다.
+
+
+
+##### 문제
+
+```
+Local delivery companies will increase major service charges as of next month because they have suffed from ___ losses.
+
+(A) profit (B) profited (C) profitable (D) profitably
+```
+
+
+
+##### 해설
+
+빈칸이 명사를 수식하는 형용사인것 같아서 profitable을 넣어보면 수익성있는 손실이라는 말도 안되는 해석이 나오기 때문에 복합명사가 이경우에서는 맞다. 따라서 **A가 정답**
+
+
+
+##### 단어
+
+as of: ~이후로
+
+
+
+
+
+
+
+#### 21. Most 명 vs Most of the 명
+
+둘다 대부분의 라는 뜻이다.
+
+```
+(Most / Most of) members agreed with the proposal.
+
+(Most / Most of) the members agreed with the proposal.
+```
+
+
+
+- of 뒤에 명사를 쓰려면 the가 와야한다.
+
+- 명사 앞에 the가 쓰여있지 않다면 of도 쓰면 안된다.
+
+- some/all/most 다 마찬가지다.
+
+
+
+##### 문제
+
+```
+_____ the requests and complaints regarding our online services will be processed promptly within three business hours.
+
+(A) some (B) most (C) almost (D) all of
+```
+
+
+
+##### 해설
+
+빈칸은 the requests and complaints를 수식해주는 형용사가 들어갈 자리이므로 almost는 거의라는 뜻의 부사이기 때문에 C 소거 또한 명사앞에 the가 있으므로 of를 사용해야하므로 **D가 정답**
+
+
+
+
+
+
+
+#### 22 .전치사 vs 부사절접속사
+
+- 전치사 + 명사
+- 접속사 + 문장
+
+| 전치사              | 뜻             | 부사절 접속사      |
+| ------------------- | -------------- | ------------------ |
+| during, for         | ~동안          | while              |
+| because of, due to  | ~때문에        | beacuse, since, as |
+| despite, inspite of | ~에도 불구하고 | although, even if  |
+
+
+
+
+
+##### 문제
+
+```
+____ negative reviews from critics, the sequel to the movie has earned higher profits than the original.
+
+(A) Despite (B) Even if (C) Therefore (D) While
+```
+
+
+
+##### 해설
+
+빈칸에는 전치사가 와야한다. 따라서 B,D는 접속사 C는 부사이기 때문에 **A가 정답**
+
+
+
+
+
+#### 23. Until vs by +시점
+
+- 어떤 시점까지 계속되는 상황은 until
+- 어떤 시점 전까지만 끝내면되는 상황은  by
+
+```
+The event will continue (until / by) January 9.
+
+Guests should check out (until / by) 11:00 A.M.
+```
+
+이벤트는 1월 9일까지는 계속되므로 until, 체크아웃은 11시 전까지만 하면 되므로 by
+
+
+
+##### 문제
+
+```
+Ms. Anderson plans to remain in Korea ___ the end of the month.
+
+(A) by (B) when (C) then (D) until
+```
+
+
+
+##### 해설
+
+접속사와 부사는 올 수 없으므로 B, C 소거 또한, 해석상 이달 말까지 한국에 계속 남아있을 것이므로 **D가 정답**
+
+
+
+
+
+#### 24. Help
+
+- help + (to)-v : ~하는 것을 돕다.
+
+  - help는 동명사랑은 절대 안쓴다.
+  - help뒤에 to-v가 바로 오면 ~하는 것을 돕다. 라는 뜻으로 해석된다.
+
+  ```
+  I helped to organize the event
+  ```
+
+  
+
+- help + 목적어 + (to)-v: 목적어가 ~하는 것을 돕다. (5형식)
+
+```
+I helped him to organize the event
+```
+
+
+
+**여기서 help의 to부정사의  to는 생략될 수 있다.**
+
+
+
+##### 문제
+
+```
+I believe that Ms.Kohl's research can help ____ food shortages in the country
+
+(A) overcomes (B) overcame (C) has overcome (D) overcome
+```
+
+
+
+##### 해설
+
+목적어자리인데 보기중에 명사가 없고 빈칸 앞에 help가 있으므로 빈칸은 help + to-v로 유츄되는데 to는 생략될 수 있으니 **D가 정답**
+
+
+
+
+
+#### 25. 타동사 vs 자동사
+
+동사 뒤에 빈칸이 있을 때
+
+- 타동사 + 목적어(명사)
+
+```
+The restaurant is considering (expansive / expansion).
+```
+
+
+
+- 자동사 + 부사
+
+```
+Stock prices are plummeting (rapidly / rapid). 
+```
+
+
+
+
+
+##### 문제
+
+```
+In last week's shareholder meeting, Pacific Brewery president Alfonso Walton spoke _____ about the company's ambitious future plans.
+
+(A) eloquently (B) eloquent (C) most eloquent (D) eloquence
+```
+
+
+
+##### 해설
+
+spoke는 자동사이기 때문에 목적어를 취할 수 없고 spoke를 수식하기 때문에 부사가 와야하므로 **A가 정답**
+
+
+
+
+
+
+
+#### 26. no vs none
+
+- no: 명사를 꾸며주는 형용사 (단/복수 다 가능)
+- none: no + one, 단독으로 사용될 수 있는 명사이다. (단/복수 취급 다 가능)
+
+
+
+##### 문제
+
+```
+The department head complained that he ordered several office supplies last week, but ___ have been delivered yet.
+
+(A) almost (B) no (C) none (D) each
+```
+
+
+
+##### 해설
+
+빈칸은 주어(명사) 자리이기 때문에 또, each는 항상 단수 취급하기 때문에 have와 수일치가 되지 않는다. 따라서 **C가 정답**
 
 
 
@@ -658,42 +1121,284 @@ _____ the employees required during the strike was a promised salary raise and a
 
 
 
-부분/전체를 나타내는 표현의 수일치 most of all of some of half of [2:07:31](https://www.youtube.com/watch?v=ieOrhAVjorg&t=7651s) 
+#### 27. 현재 vs 현재진행
 
-제안/요청/의무와 관련된 that절 [2:13:06](https://www.youtube.com/watch?v=ieOrhAVjorg&t=7986s) 
+- 현재시제 (동사원형 / 동사s: ~한다): **일반적/반복적/일상적으로 발생**하는 일을 표현한다.
 
-had pp [2:21:47](https://www.youtube.com/watch?v=ieOrhAVjorg&t=8507s) 
+`always`, `usually`,` generally`, `daliy`, `every month` 이런게 보이면 현재시제
 
-복합명사 [2:30:40](https://www.youtube.com/watch?v=ieOrhAVjorg&t=9040s) 
+```
+We (lock / are locking) all the doors at 10:00PM every day
+```
 
-Most 명 vs Most of the 명 [2:36:34](https://www.youtube.com/watch?v=ieOrhAVjorg&t=9394s) 
 
-전치사 vs 부사절접속사 [2:42:02](https://www.youtube.com/watch?v=ieOrhAVjorg&t=9722s) 
 
-Until vs by +시점 [2:47:08](https://www.youtube.com/watch?v=ieOrhAVjorg&t=10028s) 
+- 현재진행시제 (be 동사 + v-ing: ~하고있는 중이다.): 현재의 한 순간에서 계속 진행되고 있는 상황을 표현한다.
 
-Help [2:53:09](https://www.youtube.com/watch?v=ieOrhAVjorg&t=10389s) 
+`now`, `right now`, `at the moment` , `currently` 이런게 보이면 현재진행시제
 
-타동사vs 자동사 [2:58:16](https://www.youtube.com/watch?v=ieOrhAVjorg&t=10696s) 
+```
+Mr.Lewis (is meeting / meets) the client now.
+```
 
-no vs none [3:03:47](https://www.youtube.com/watch?v=ieOrhAVjorg&t=11027s) 
 
-현재 vs 현재진행 [3:10:23](https://www.youtube.com/watch?v=ieOrhAVjorg&t=11423s) 
 
-To부정사 vs 전치사 to [3:17:43](https://www.youtube.com/watch?v=ieOrhAVjorg&t=11863s) 
+##### 문제
 
-Those who vs anyone who 수일치차이 [3:23:52](https://www.youtube.com/watch?v=ieOrhAVjorg&t=12232s) 
+```
+A number of foreign tourists ___ our town every year on March 5 to participate in a special festival that we hold on the day.
 
-Most vs almost [3:29:19](https://www.youtube.com/watch?v=ieOrhAVjorg&t=12559s) 
+(A) visit (B) has visited (C) are visiting (D) were visited
+```
 
-Toward(방향) vs to (목적지) [3:34:33](https://www.youtube.com/watch?v=ieOrhAVjorg&t=12873s) 
 
-4형식 동사 [3:40:47](https://www.youtube.com/watch?v=ieOrhAVjorg&t=13247s) 
 
-인칭대명사 [3:46:08](https://www.youtube.com/watch?v=ieOrhAVjorg&t=13568s) 
 
-지시대명사_ that/those의 비교기능 [3:50:59](https://www.youtube.com/watch?v=ieOrhAVjorg&t=13859s) 
 
-Between vs among [3:56:23](https://www.youtube.com/watch?v=ieOrhAVjorg&t=14183s) 
+##### 해설
 
-현재진행시제의 미래표현 [3:59:42](https://www.youtube.com/watch?v=ieOrhAVjorg&t=14382s)
+빈칸은 동사자리이며 B는 수일치가 틀리므로 소거한다.  또한 빈칸뒤에 목적어가 있으므로 수동태는 올 수 없으므로 D도 소거한다. 일반적, 반복적, 일상적으로 발생하는 every year라는 표현이 있으므로  **A가 정답**
+
+
+
+
+
+
+
+#### 28. To부정사 vs 전치사 to
+
+- To부정사: Be + p.p + to-v
+
+| be allowed to-v    | ~하도록 허가되다    |
+| ------------------ | ------------------- |
+| be permitted to-v  | ~하도록 허가되다    |
+| be asked to-v      | ~하도록 요청받다    |
+| be requested to-v  | ~하도록 요청받다    |
+| be invited to-v    | ~하도록 초대받다    |
+| be required to-v   | ~하도록 요구받다    |
+| be advised to-v    | ~하도록 조언받다    |
+| be prompted to-v   | ~하도록 유도되다    |
+| be reminded to-v   | ~하라는 말을 듣다   |
+| be warned to-v     | ~하라고 경고받다    |
+| be encouraged to-v | ~하도록 격려되다    |
+| be intended to-v   | ~하도록 의도되다    |
+| be expected to-v   | ~할 것으로 기대되다 |
+| be prepared to-v   | ~할 준비가 되다     |
+| be supposed to-v   | ~하기로 되어 있다   |
+| be scheduled to-v  | ~할 예정이다        |
+| be set to-v        | ~할 예정이다        |
+| be excited to-v    | ~해서 기쁘다        |
+| be pleased to-v    | ~해서 기쁘다        |
+| be entitled to-v   | ~할 자격이 있다.    |
+
+
+
+- 전치사 to 관용표현: be p.p + to 명사(동명사)
+
+| be committed to n  | ~에 전념하다 |
+| ------------------ | ------------ |
+| be dedicated to n  | ~에 전념하다 |
+| be devoted to n    | ~에 전념하다 |
+| be opposed to n    | ~에 반대하다 |
+| object to n        | ~를 반대하다 |
+| be related to n    | ~에 관련되다 |
+| be used to n       | ~에 익숙하다 |
+| be accustomed to n | ~에 익숙하다 |
+| contribute to n    | ~에 기여하다 |
+| look forward to n  | ~를 기대하다 |
+
+
+
+##### 문제
+
+```
+Half of the board members objected to ____ the headquarters because of the tremedous costs that will be incurred during the process.
+
+(A) relocated (B) relocating (C) relocate (D) relocation
+```
+
+
+
+##### 해설
+
+위에 표에 따르면 명사가 와야하기 때문에 D는 명사두개가 동시에 올수 없으므로 동명사인 **B가 정답**
+
+
+
+##### 단어
+
+incur 발생시키다.
+
+
+
+
+
+#### 29. Those who vs anyone who 수 일치 차이
+
+- those who: ~하는 사람들 (**복수**)
+- anyone who: ~하는 누구든지 (**단수**)
+
+```
+The program targets (anyone / those) who live in the neighborhood.
+```
+
+
+
+##### 문제
+
+```
+____ who enrolls in the advanced course will be able to analyze different types of statistical data by the end of the term.
+
+(A) Those (B) They (C) Anyone (D) That
+```
+
+
+
+##### 해설
+
+인칭대명사는 수식이 불가하므로 C를 소거, 또한 that은 사람을 표현하지 못하므로 D를 소거한다.
+
+마지막으로  enrolls 단수동사이므로 **C가 정답**
+
+
+
+
+
+
+
+#### 30. Most vs almost
+
+- most: 대부분의 라는 뜻으로 명사/형용사 역할을 한다.
+- almost는 거의 라는 뜻으로 부사역할을 한다.
+
+```
+Most airports are crowded during the holidays.
+
+Almost all airports are crowded during the holidays.
+```
+
+
+
+##### 문제
+
+```
+Inventum Tech's vacuum cleaner models have higher performance than those of its competitors in ___ every aspect.
+
+(A) very (B) most (C) much (D) almost
+```
+
+
+
+##### 해설
+
+빈칸은 every를 수식하는 부사 자리다.  따라서 B, C는 안된다. 또한 much는 불가산 명사를 꾸며주는 형용사이다. aspect는 가산명사이다. 따라서 해석이 매끄러운 **D가 정답**
+
+
+
+
+
+#### 31. Toward(방향) vs to (목적지)
+
+- To: ~쪽으로 라는 정확한 목적지를 나타낸다.
+- Toward: ~를 향하여 라는 막연한 방향을 나타낸다.
+
+```
+I sent client files (to / toward) your e-mail.
+```
+
+이메일은 정확한 목적지가 있기 때문에 to가 맞다.
+
+
+
+##### 문제
+
+```
+Enployees are asked to promptly report any technical difficulties ____ the IT department.
+
+(A) along (B) towards (C) to (D) not with standing
+```
+
+
+
+##### 해설
+
+정확한 부서로 전달되어야하기 때문에 **C가 정답**
+
+
+
+##### 단어
+
+not with standing: ~에도 불구하고
+
+
+
+
+
+#### 32. 4형식 동사
+
+- 타동사 중에 목적어를 2개를 갖는 동사
+- S + V + IO + DO: IO에게  DO를 준다.
+
+```
+The committee granted us permission for the project.
+
+We give tourists (informative / information) about local events.
+```
+
+
+
+give, sell, offer, teach, send, lend, bring, tell show, award, buy, make
+
+
+
+
+
+##### 문제
+
+```
+The upcoming trade show will offer _____ an opportunity to experience new technologies.
+
+(A) participatory (B) participates (C) participants (D) participation
+```
+
+
+
+##### 해설
+
+4형식 동사이므로 간접 목적어의 자리이므로 명사가 와야한다. 또한 해석상 participants가 매끄러우므로 **C가 정답**
+
+
+
+##### 단어
+
+comply with: ~를 준수하다.
+
+
+
+
+
+#### 33. 현재진행시제의 미래표현
+
+- 현재진행시제는 아주 가까운 미래를 나타낼 수 있다.
+- 따라서 현재 진행 시제는 ~할것이다. 라고 해석될 수 있다.
+
+```
+We're introducing a new security system next week.
+```
+
+
+
+##### 문제
+
+```
+The president of the non-profit organization ____ a short speech tomorrow.
+
+(A) has given (B) is giving (C) gives (D) gave
+```
+
+
+
+##### 해설
+
+가까운 미래(tomorrow)을 보고 현재진행시제의 미래표현을 생각한다.  따라서  **B가 정답**
+
